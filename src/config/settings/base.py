@@ -34,6 +34,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # apps
+    'apps.core.apps.CoreConfig',
+    'apps.account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
@@ -140,4 +144,9 @@ if int(os.getenv('ENABLE_WHITENOISE', default=0)):
 
 # ---Default primary key field type------------------------------
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# ---------------------------------------------------------------
+
+
+# ---Auth user model---------------------------------------------
+AUTH_USER_MODEL = 'account.User'
 # ---------------------------------------------------------------
