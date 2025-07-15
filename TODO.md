@@ -7,16 +7,10 @@
 
 ## ✓ level 1 complete core
 
-## 📌level 2 complete account = 0
-▢ jwt
+## ✓ level 2 complete account
 
-▢ test model
-## 🔗level 3 complete public
-▢
-## 🔗level 4 complete notification
-▢
-## 🔗level 5 complete chat
-▢
-## 🔗level 6 complete blog
+## 📌level 3 complete public
+
+## 🔗level 4 complete ContactUs
 
 -----
