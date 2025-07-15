@@ -4,7 +4,6 @@ from django.core.exceptions import ValidationError
 from .utils import check_phone_number
 
 
-# Custom User manager
 class UserManager(BaseUserManager):
     def create_user(self, password=None, phone_number=None):
 
@@ -21,9 +20,6 @@ class UserManager(BaseUserManager):
             raise ValueError(_('Users must have a mobile number!'))
 
         user = self.create_user(password, phone_number)
-
-        obj = user.accesses.create_admin_access()
-        user.accesses.add(obj)
 
         user.is_admin = True
         user.is_superuser = True

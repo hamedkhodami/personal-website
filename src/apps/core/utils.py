@@ -4,7 +4,7 @@ from datetime import datetime
 from os.path import splitext
 from django.contrib import messages
 import jdatetime
-from django.contrib.auth import settings
+from django.conf import settings
 from threading import Thread
 from ippanel import Client
 from django.core.mail import EmailMessage
@@ -106,30 +106,3 @@ def get_coded_phone_number(number):
     except (TypeError, IndexError):
         return None
 
-
-# send sms
-def send_sms(phone_number, pattern, **kwargs):
-    phone_number = get_coded_phone_number(phone_number)
-    phone_number = phone_number.replace('+', '')
-
-    # Create client instance
-    sms = Client(settings.SMS_CONFIG['API_KEY'])
-
-    # Send sms via ippanel module
-    t1 = Thread(target=sms.send_pattern, args=(
-        pattern,  # pattern code
-        settings.SMS_CONFIG['ORIGINATOR'],  # originator
-        phone_number,  # recipient
-        kwargs,  # pattern values
-    ))
-    t1.start()
-
-
-def send_email(subject, template_name, recipient_list, context, from_email=None):
-        # Render email template with context
-        message = render_to_string(template_name, context)
-        # Create an email instance
-        email = EmailMessage(subject, message, from_email, recipient_list)
-        email.content_subtype = 'html'  # Set content type to HTML
-        # Send email
-        email.send()
