@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     # apps
     'apps.core.apps.CoreConfig',
     'apps.account.apps.AccountConfig',
+    'apps.contactus.apps.ContactusConfig',
+    'apps.public.apps.PublicConfig',
 ]
 
 MIDDLEWARE = [

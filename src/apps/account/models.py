@@ -18,7 +18,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(_('Active'), default=True)
     is_admin = models.BooleanField(_('Admin'), default=False)
     is_verified = models.BooleanField(_('Verify'), default=False)
-    is_used_free_subs = models.BooleanField(_('Is used free subs'), default=False)
     token = models.CharField(_("Secret token"), max_length=64, null=True, blank=True, editable=False)
     created_at = models.DateTimeField(_('Creation time'), auto_now_add=True)
     updated_at = models.DateTimeField(_('Update time'), auto_now=True)

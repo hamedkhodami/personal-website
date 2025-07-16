@@ -5,6 +5,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('apps.public.urls', namespace='public')),
+    path('contactus/', include('apps.contactus.urls', namespace='contactus')),
 
 ]
 if settings.DEBUG:

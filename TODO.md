@@ -1,6 +1,6 @@
 # TODO LIST
 
-▢ check in urls
+- check in urls
 
 ---
 # 🚩F1
@@ -10,6 +10,9 @@
 ## ✓ level 2 complete account
 
 ## 📌level 3 complete public
+
+- validator
+- enum
 
 ## 🔗level 4 complete ContactUs
 
