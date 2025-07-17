@@ -1,0 +1,53 @@
+{% load i18n %}
+
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ project_detail.title }}</title>
+</head>
+<body>
+
+    <h1>{{ project_detail.title }}</h1>
+
+    <p>{{ project_detail.description }}</p>
+
+    {% if project_detail.image %}
+        <div>
+            <img src="{{ project_detail.image.url }}" alt="{{ project_detail.title }}" style="max-width:300px;">
+        </div>
+    {% endif %}
+
+    <p><strong>{% trans "Tech Stack:" %}</strong>
+        {% for tech in project_detail.tech_stack.all %}
+            {{ tech.title }}{% if not forloop.last %}, {% endif %}
+        {% empty %}
+            {% trans "No technologies listed." %}
+        {% endfor %}
+    </p>
+
+    {% if project_detail.project_url %}
+        <p><a href="{{ project_detail.project_url }}" target="_blank">{% trans "Visit Live Project" %}</a></p>
+    {% endif %}
+
+    {% if project_detail.github_url %}
+        <p><a href="{{ project_detail.github_url }}" target="_blank">{% trans "GitHub Repository" %}</a></p>
+    {% endif %}
+
+    <hr>
+
+    <h2>{% trans "Gallery" %}</h2>
+
+    {% if project_detail.images.all %}
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            {% for image in project_detail.images.all %}
+                <div>
+                    <img src="{{ image.image.url }}" alt="{{ image.alt_text }}" style="width:200px; height:auto;">
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>{% trans "No gallery images yet." %}</p>
+    {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% load i18n %}
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans "Projects" %}</title>
+</head>
+<body>
+
+    <h1>{% trans "My Projects" %}</h1>
+
+    {% if projects %}
+        <ul>
+            {% for project in projects %}
+                <li>
+                    <h2>{{ project.title }}</h2>
+                    <p>{{ project.short_description }}</p>
+
+                    {% if project.image %}
+                        <img src="{{ project.image.url }}" alt="{{ project.title }}" style="max-width:200px;">
+                    {% endif %}
+
+                    {% if project.project_url %}
+                        <p><a href="{{ project.project_url }}" target="_blank">{% trans "Visit Project" %}</a></p>
+                    {% endif %}
+
+                    {% if project.github_url %}
+                        <p><a href="{{ project.github_url }}" target="_blank">{% trans "GitHub Repository" %}</a></p>
+                    {% endif %}
+
+                    <p><a href="{% url 'public:project_detail' project.slug %}">{% trans "See Details" %}</a></p>
+                    <hr>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>{% trans "No projects yet." %}</p>
+    {% endif %}
+
+</body>
+</html>

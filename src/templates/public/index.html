@@ -1,0 +1,48 @@
+{% load i18n %}
+
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans "Homepage" %}</title>
+</head>
+<body>
+
+    {% if category %}
+        <h2>{% trans "Skills in category:" %} {{ category.title }}</h2>
+
+        {% if skills %}
+            <ul>
+                {% for skill in skills %}
+                    <li>{{ skill.title }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>{% trans "No skills in this category." %}</p>
+        {% endif %}
+    {% else %}
+        <p>{% trans "No category selected." %}</p>
+    {% endif %}
+
+    <hr>
+
+    <h2>{% trans "Latest Projects" %}</h2>
+
+    {% if projects %}
+        <ul>
+            {% for project in projects %}
+                <li>
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.short_description }}</p>
+                    {% if project.image %}
+                        <img src="{{ project.image.url }}" alt="{{ project.title }}" style="max-width:200px;">
+                    {% endif %}
+                    <p><a href="{% url 'public:project_detail' project.slug %}">{% trans "See Details" %}</a></p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>{% trans "No projects to display." %}</p>
+    {% endif %}
+
+</body>
+</html>
