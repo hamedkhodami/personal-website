@@ -9,11 +9,8 @@
 
 ## ✓ level 2 complete account
 
-## 📌level 3 complete public
+## ✓ level 3 complete ContactUs
 
-- validator
-- enum
-
-## 🔗level 4 complete ContactUs
+## 📌level 4 complete public
 
 -----
