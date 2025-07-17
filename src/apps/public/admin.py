@@ -85,7 +85,7 @@ class ProjectImageInline(admin.TabularInline):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'project_url_link', 'github_url_link')
+    list_display = ('title', 'slug', 'creation_at', 'project_url_link', 'github_url_link')
     list_filter = ('tech_stack',)
     search_fields = ('title', 'slug', 'description')
     prepopulated_fields = {'slug': ('title',)}

@@ -1,0 +1,443 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-17 16:02+0330\n"
+"PO-Revision-Date: 2025-07-17 16:21+0330\n"
+"Last-Translator: None None <None>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.2\n"
+
+#: .\apps\account\admin.py:19
+msgid "Personal info"
+msgstr "اطلاعات شخصی"
+
+#: .\apps\account\admin.py:20
+msgid "Verifications"
+msgstr "تأییدها"
+
+#: .\apps\account\admin.py:21
+msgid "Dates"
+msgstr "تایخ ها"
+
+#: .\apps\account\apps.py:8
+msgid "Account"
+msgstr "حساب کاربری"
+
+#: .\apps\account\forms.py:11 .\apps\account\models.py:14
+#: .\apps\contactus\models.py:14
+msgid "Phone number"
+msgstr "شماره تلفن"
+
+#: .\apps\account\forms.py:12
+msgid "Password"
+msgstr "رمز عبور"
+
+#: .\apps\account\forms.py:13
+msgid "Password repeat"
+msgstr "تکرار رمز عبور"
+
+#: .\apps\account\forms.py:24
+msgid "Enter a valid phone number"
+msgstr "شماره تلفن معتبر وارد کنید"
+
+#: .\apps\account\forms.py:33
+msgid "Passwords are not match."
+msgstr "رمزهای عبور مطابقت ندارند."
+
+#: .\apps\account\managers.py:11
+msgid "Entered phone number is not valid"
+msgstr "شماره تلفن وارد شده معتبر نیست"
+
+#: .\apps\account\managers.py:20
+msgid "Users must have a mobile number!"
+msgstr "کاربران باید شماره موبایل داشته باشند!"
+
+#: .\apps\account\models.py:15 .\apps\contactus\models.py:13
+#: .\apps\public\models.py:14
+msgid "Email"
+msgstr "ایمیل"
+
+#: .\apps\account\models.py:16
+msgid "First name"
+msgstr "نام"
+
+#: .\apps\account\models.py:17
+msgid "Last name"
+msgstr "نام خانوادگی"
+
+#: .\apps\account\models.py:18
+msgid "Active"
+msgstr "فعال"
+
+#: .\apps\account\models.py:19
+msgid "Admin"
+msgstr "ادمین"
+
+#: .\apps\account\models.py:20
+msgid "Verify"
+msgstr "تأیید"
+
+#: .\apps\account\models.py:21
+msgid "Secret token"
+msgstr "توکن مخفی"
+
+#: .\apps\account\models.py:22
+msgid "Creation time"
+msgstr "زمان ایجاد"
+
+#: .\apps\account\models.py:23
+msgid "Update time"
+msgstr "زمان به‌روزرسانی"
+
+#: .\apps\account\models.py:29
+msgid "User"
+msgstr "کاربر"
+
+#: .\apps\account\models.py:30
+msgid "Users"
+msgstr "کاربران"
+
+#: .\apps\account\models.py:36
+msgid "No Name"
+msgstr "بدون نام"
+
+#: .\apps\contactus\admin.py:20
+msgid "Status"
+msgstr "وضعیت"
+
+#: .\apps\contactus\admin.py:23
+msgid "Metadata"
+msgstr "فراداده"
+
+#: .\apps\contactus\enums.py:6
+msgid "Job / Collaboration"
+msgstr "شغلی / همکاری"
+
+#: .\apps\contactus\enums.py:7
+msgid "Technical Question"
+msgstr "سوال فنی"
+
+#: .\apps\contactus\enums.py:8
+msgid "Other"
+msgstr "سایر"
+
+#: .\apps\contactus\forms.py:15
+msgid "Your message..."
+msgstr "پیام شما..."
+
+#: .\apps\contactus\forms.py:21
+msgid "Full name must be at least 3 characters long."
+msgstr "نام کامل باید حداقل ۳ کاراکتر داشته باشد."
+
+#: .\apps\contactus\forms.py:27
+msgid "Enter a valid email address."
+msgstr "یک آدرس ایمیل معتبر وارد کنید."
+
+#: .\apps\contactus\forms.py:35
+msgid "Enter a valid phone number."
+msgstr "یک شماره تلفن معتبر وارد کنید."
+
+#: .\apps\contactus\forms.py:41
+msgid "Message must be at least 10 characters long."
+msgstr "پیام باید حداقل 10 کاراکتر داشته باشد."
+
+#: .\apps\contactus\models.py:12
+msgid "Full name"
+msgstr "نام ونام خانوادگی"
+
+#: .\apps\contactus\models.py:15
+msgid "Subject"
+msgstr "موضوع"
+
+#: .\apps\contactus\models.py:17
+msgid "Message"
+msgstr "پیام"
+
+#: .\apps\contactus\models.py:19
+msgid "Is read?"
+msgstr "خوانده شده؟"
+
+#: .\apps\contactus\models.py:20
+msgid "Is replied?"
+msgstr "پاسخ داده شده؟"
+
+#: .\apps\contactus\views.py:26
+msgid "Your message has been sent successfully."
+msgstr "پیام شما با موفقیت ارسال شد."
+
+#: .\apps\core\models.py:7
+msgid "Creation Time"
+msgstr "زمان ایجاد"
+
+#: .\apps\core\models.py:8
+msgid "Update Time"
+msgstr "زمان بروز رسانی"
+
+#: .\apps\core\utils.py:53
+#, python-format
+msgid "%(days)s days ago."
+msgstr ""
+
+#: .\apps\core\utils.py:55
+#, python-format
+msgid "%(hours)s hours ago."
+msgstr ""
+
+#: .\apps\core\utils.py:57
+#, python-format
+msgid "%(minutes)s minutes ago."
+msgstr ""
+
+#: .\apps\core\utils.py:59
+msgid "Moments ago"
+msgstr "لحظاتی پیش"
+
+#: .\apps\core\utils.py:72 .\apps\core\utils.py:86
+msgid "Entered data is not correct."
+msgstr "اطلاعات وارد شده صحیح نیست."
+
+#: .\apps\public\admin.py:13
+msgid "Personal Info"
+msgstr "اطلاعات شخصی"
+
+#: .\apps\public\admin.py:16
+msgid "Social Links"
+msgstr "لینک‌ شبکه های اجتماعی"
+
+#: .\apps\public\admin.py:25 .\apps\public\models.py:10
+msgid "GitHub"
+msgstr "گیت هاب"
+
+#: .\apps\public\admin.py:31 .\apps\public\models.py:11
+msgid "LinkedIn"
+msgstr "لینکدین"
+
+#: .\apps\public\admin.py:37
+msgid "Resume"
+msgstr "رزومه"
+
+#: .\apps\public\admin.py:42
+msgid "No resume uploaded"
+msgstr "رزومه ای آپلود نشده است"
+
+#: .\apps\public\admin.py:43
+msgid "Resume Preview"
+msgstr "پیش‌نمایش رزومه"
+
+#: .\apps\public\admin.py:61
+msgid "Number of Skills"
+msgstr "تعداد مهارت‌ها"
+
+#: .\apps\public\admin.py:83
+msgid "Preview"
+msgstr "پیش‌نمایش"
+
+#: .\apps\public\admin.py:94
+msgid "Project Info"
+msgstr "اطلاعات پروژه"
+
+#: .\apps\public\admin.py:97
+msgid "Links"
+msgstr "لینک ها"
+
+#: .\apps\public\admin.py:100
+msgid "Technology Stack"
+msgstr "فناوری های استفاده شده"
+
+#: .\apps\public\admin.py:110 .\apps\public\models.py:52
+msgid "Live URL"
+msgstr "آدرس اینترنتی"
+
+#: .\apps\public\admin.py:117 .\apps\public\models.py:53
+msgid "GitHub URL"
+msgstr "آدرس گیت هاب"
+
+#: .\apps\public\models.py:8
+msgid "Biography"
+msgstr "بیوگرافی"
+
+#: .\apps\public\models.py:9
+msgid "Resume (PDF)"
+msgstr "رزومه (PDF)"
+
+#: .\apps\public\models.py:12
+msgid "Telegram"
+msgstr "تلگرام"
+
+#: .\apps\public\models.py:13
+msgid "Instagram"
+msgstr "اینستاگرام"
+
+#: .\apps\public\models.py:17 .\apps\public\models.py:20
+#: .\templates\public\about.html:5 .\templates\public\about.html:9
+msgid "About Me"
+msgstr "درباره ی من"
+
+#: .\apps\public\models.py:24
+msgid "Category Title"
+msgstr "عنوان دسته بندی"
+
+#: .\apps\public\models.py:27
+msgid "Skill Category"
+msgstr "دسته بندی مهارت ها"
+
+#: .\apps\public\models.py:34 .\apps\public\models.py:38
+msgid "Skill"
+msgstr "مهارت"
+
+#: .\apps\public\models.py:39
+msgid "Skills"
+msgstr "مهارت ها"
+
+#: .\apps\public\models.py:46
+msgid "Title"
+msgstr "عنوان"
+
+#: .\apps\public\models.py:47
+msgid "Slug"
+msgstr "برچسب"
+
+#: .\apps\public\models.py:48
+msgid "Description"
+msgstr "توضیحات"
+
+#: .\apps\public\models.py:49
+msgid "Shot Description"
+msgstr "توضیحات مختصر"
+
+#: .\apps\public\models.py:50
+msgid "Technologies Used"
+msgstr "فناوری‌های مورد استفاده"
+
+#: .\apps\public\models.py:51 .\apps\public\models.py:65
+msgid "Image"
+msgstr "تصویر"
+
+#: .\apps\public\models.py:56
+msgid "Project"
+msgstr "پروژه"
+
+#: .\apps\public\models.py:57 .\templates\public\project.html:5
+msgid "Projects"
+msgstr "پروژه ها"
+
+#: .\apps\public\models.py:66
+msgid "Alt Text"
+msgstr "متن جایگزین"
+
+#: .\apps\public\models.py:69
+msgid "Project Image"
+msgstr "تصویر پروژه"
+
+#: .\apps\public\models.py:70
+msgid "Project Images"
+msgstr "تصاویر پروژه"
+
+#: .\templates\contact\contactus.html:7 .\templates\contact\contactus.html:11
+msgid "Contact Us"
+msgstr "تماس با ما"
+
+#: .\templates\contact\contactus.html:24
+msgid "Send"
+msgstr "ارسال"
+
+#: .\templates\contact\thank_you.html:5
+msgid "Message Sent"
+msgstr "پیام ارسال شد"
+
+#: .\templates\contact\thank_you.html:8
+msgid "Thank You!"
+msgstr "متشکرم! "
+
+#: .\templates\contact\thank_you.html:9
+msgid "Your message has been received. We'll get back to you if needed."
+msgstr "پیام شما دریافت شد. در صورت نیاز با شما تماس خواهیم گرفت."
+
+#: .\templates\contact\thank_you.html:10
+msgid "Back to Contact Form"
+msgstr "بازگشت به فرم تماس"
+
+#: .\templates\public\about.html:15
+msgid "Download Resume"
+msgstr "دانلود رزومه"
+
+#: .\templates\public\about.html:27
+msgid "No information available yet."
+msgstr "هنوز اطلاعاتی در دسترس نیست."
+
+#: .\templates\public\index.html:6
+msgid "Homepage"
+msgstr "صفحه اصلی"
+
+#: .\templates\public\index.html:11
+msgid "Skills in category:"
+msgstr "مهارت‌ها در دسته‌بندی:"
+
+#: .\templates\public\index.html:20
+msgid "No skills in this category."
+msgstr "هیچ مهارتی در این دسته بندی وجود ندارد."
+
+#: .\templates\public\index.html:23
+msgid "No category selected."
+msgstr "هیچ دسته بندی انتخاب نشده است."
+
+#: .\templates\public\index.html:28
+msgid "Latest Projects"
+msgstr "آخرین پروژه‌ها"
+
+#: .\templates\public\index.html:39 .\templates\public\project.html:30
+msgid "See Details"
+msgstr "جزئیات را ببینید"
+
+#: .\templates\public\index.html:44
+msgid "No projects to display."
+msgstr "پروژه‌ای برای نمایش وجود ندارد."
+
+#: .\templates\public\project.html:9
+msgid "My Projects"
+msgstr "پروژه‌های من"
+
+#: .\templates\public\project.html:23
+msgid "Visit Project"
+msgstr "بازدید از پروژه"
+
+#: .\templates\public\project.html:27
+#: .\templates\public\project_detail.html:33
+msgid "GitHub Repository"
+msgstr "مخزن گیت‌هاب"
+
+#: .\templates\public\project.html:36
+msgid "No projects yet."
+msgstr "هنوز هیچ پروژه‌ای وجود ندارد."
+
+#: .\templates\public\project_detail.html:20
+msgid "Tech Stack:"
+msgstr "فناوری:"
+
+#: .\templates\public\project_detail.html:24
+msgid "No technologies listed."
+msgstr "هیچ فناوری ذکر نشده است."
+
+#: .\templates\public\project_detail.html:29
+msgid "Visit Live Project"
+msgstr "از پروژه زنده دیدن کنید"
+
+#: .\templates\public\project_detail.html:38
+msgid "Gallery"
+msgstr "گالری"
+
+#: .\templates\public\project_detail.html:49
+msgid "No gallery images yet."
+msgstr "هنوز هیچ تصویری در گالری وجود ندارد."

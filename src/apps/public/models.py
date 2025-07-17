@@ -51,6 +51,7 @@ class Project(BaseModel):
     image = models.ImageField(_('Image'), upload_to='projects/', null=True, blank=True)
     project_url = models.URLField(_('Live URL'), null=True, blank=True)
     github_url = models.URLField(_('GitHub URL'), null=True, blank=True)
+    creation_at = models.CharField(_("Creation At"), null=True, blank=True)
 
     class Meta:
         verbose_name = _("Project")

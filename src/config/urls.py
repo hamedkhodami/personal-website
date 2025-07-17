@@ -8,6 +8,8 @@ urlpatterns = [
     path('', include('apps.public.urls', namespace='public')),
     path('contactus/', include('apps.contactus.urls', namespace='contactus')),
 
+    path('rosetta/', include('rosetta.urls')),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
