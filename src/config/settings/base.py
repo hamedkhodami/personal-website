@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'apps.account.apps.AccountConfig',
     'apps.contactus.apps.ContactusConfig',
     'apps.public.apps.PublicConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -152,3 +153,34 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ---Auth user model---------------------------------------------
 AUTH_USER_MODEL = 'account.User'
 # ---------------------------------------------------------------
+
+
+# ---REDIS-------------------------------------------------------
+REDIS_CONFIG = {
+    'active': int(os.getenv('REDIS_ACTIVE', 0)),  # 1 redis is connected, 0 not connected
+    'host': os.getenv('REDIS_HOST', 'localhost'),
+    'port': int(os.getenv('REDIS_PORT', 6379))
+}
+# ---------------------------------------------------------------
+
+
+# ---EMAIL-------------------------------------------------------
+EMAIL_BACKEND = os.getenv('EMAIL_BACKEND')
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = int(os.getenv('EMAIL_PORT', 587))
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS') == 'True'
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
+# ---------------------------------------------------------------
+
+
+# ---CELERY config------------------------------------------------
+CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL', 'redis://localhost:6379')
+CELERY_RESULT_BACKEND = CELERY_BROKER_URL
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = TIME_ZONE
+CELERY_TASK_DEFAULT_QUEUE = 'default'
+# ----------------------------------------------------------------

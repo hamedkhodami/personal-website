@@ -15,7 +15,6 @@ class UserFactory(factory.django.DjangoModelFactory):
     is_active = True
     is_admin = False
     is_verified = False
-    is_used_free_subs = False
     token = factory.LazyFunction(lambda: get_random_string(64))
     created_at = factory.LazyFunction(timezone.now)
     updated_at = factory.LazyFunction(timezone.now)

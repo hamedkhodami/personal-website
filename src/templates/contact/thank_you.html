@@ -1,0 +1,12 @@
+{% load i18n %}
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans "Message Sent" %}</title>
+</head>
+<body>
+    <h2>{% trans "Thank You!" %}</h2>
+    <p>{% trans "Your message has been received. We'll get back to you if needed." %}</p>
+    <a href="{% url 'contact:contact-us' %}">{% trans "Back to Contact Form" %}</a>
+</body>
+</html>

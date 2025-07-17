@@ -18,7 +18,7 @@ class TestUserModel:
         assert user.full_name() == "Ali Rezaei"
 
         user = UserFactory(first_name="", last_name="")
-        assert user.full_name() == "بدون نام" or user.full_name() == "No Name"  # بسته به زبان پروژه
+        assert user.full_name() == "بدون نام" or user.full_name() == "No Name"
 
     def test_token_generation_and_check(self):
         user = UserFactory(token=None)
