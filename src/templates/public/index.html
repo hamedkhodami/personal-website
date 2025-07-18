@@ -1,62 +1,110 @@
+{% extends "base/base.html" %}
 {% load static %}
 {% load i18n %}
 
-<html lang="fa">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% trans "Homepage" %}</title>
-  <link rel="stylesheet" href="{% static 'public/css/styles.css' %}">
 
-</head>
-<body class="bg-gray-100 text-gray-800 font-sans">
+{% block title %}
+{% trans "Homepage" %}
+{% endblock %}
 
-  <div class="container mx-auto px-4 py-8">
 
-    {% if category %}
-      <h2 class="text-2xl font-bold mb-4 text-blue-700">
-        {% trans "Skills in category:" %} {{ category.title }}
-      </h2>
+{% block body %}
+  <div class="container mx-auto px-4 py-8 mt-20">
 
-      {% if skills %}
-        <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-          {% for skill in skills %}
-            <li class="bg-white p-4 rounded shadow hover:shadow-md transition">
-              {{ skill.title }}
-            </li>
-          {% endfor %}
-        </ul>
-      {% else %}
-        <p class="text-gray-500 italic mb-8">{% trans "No skills in this category." %}</p>
-      {% endif %}
-    {% else %}
-      <p class="text-gray-500 italic mb-8">{% trans "No category selected." %}</p>
-    {% endif %}
+      <!-- 🧠 [about-section] -->
+      <section class="mb-16 px-4">
+          <div class="max-w-4xl mx-auto bg-white rounded-xl shadow p-8 grid md:grid-cols-2 gap-6 items-start">
 
-    <hr class="my-6 border-gray-300">
+            <!-- 👤 بایوگرافی -->
+            <div>
+              <h2 class="text-2xl font-extrabold text-gray-800 mb-4">{% trans "About Me" %}</h2>
+              <p class="text-gray-700 leading-relaxed whitespace-pre-line">
+                {{ about.bio }}
+              </p>
 
-    <h2 class="text-2xl font-bold mb-4 text-green-700">{% trans "Latest Projects" %}</h2>
+              {% if about.resume_file %}
+                <a href="{{ about.resume_file.url }}" target="_blank" class="inline-block mt-6 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">
+                  {% trans "Download Resume" %}
+                </a>
+              {% endif %}
+            </div>
 
-    {% if projects %}
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {% for project in projects %}
-          <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ project.title }}</h3>
-            <p class="text-gray-700 mb-4">{{ project.short_description }}</p>
-            {% if project.image %}
-              <img src="{{ project.image.url }}" alt="{{ project.title }}" class="w-full h-auto rounded mb-4">
-            {% endif %}
-            <a href="{% url 'public:project_detail' project.slug %}" class="text-blue-600 hover:underline">
-              {% trans "See Details" %}
-            </a>
+            <!-- 🌐 لینک‌ها -->
+            <div class="space-y-3">
+              <h3 class="text-lg font-semibold text-gray-700 mb-2">{% trans "Find Me Online" %}</h3>
+              <ul class="flex flex-col gap-2 text-blue-700 font-medium">
+                {% if about.github %}
+                  <li><a href="{{ about.github }}" target="_blank" class="hover:underline">GitHub</a></li>
+                {% endif %}
+                {% if about.linkedin %}
+                  <li><a href="{{ about.linkedin }}" target="_blank" class="hover:underline">LinkedIn</a></li>
+                {% endif %}
+                {% if about.telegram %}
+                  <li><a href="{{ about.telegram }}" target="_blank" class="hover:underline">Telegram</a></li>
+                {% endif %}
+                {% if about.instagram %}
+                  <li><a href="{{ about.instagram }}" target="_blank" class="hover:underline">Instagram</a></li>
+                {% endif %}
+                {% if about.email %}
+                  <li><a href="mailto:{{ about.email }}" class="hover:underline">📧 {{ about.email }}</a></li>
+                {% endif %}
+              </ul>
+            </div>
+
           </div>
-        {% endfor %}
-      </div>
-    {% else %}
-      <p class="text-gray-500 italic">{% trans "No projects to display." %}</p>
-    {% endif %}
+      </section>
 
+      <!-- 💡 [skills-section] -->
+      <section class="mb-12">
+        {% if category %}
+          <h2 class="text-2xl font-bold mb-4 text-blue-700">
+            {% trans "Skills in category:" %} {{ category.title }}
+          </h2>
+
+          {% if skills %}
+            <ul class="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {% for skill in skills %}
+                <li class="bg-white p-4 rounded shadow hover:shadow-md transition">
+                  {{ skill.title }}
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p class="text-gray-500 italic">{% trans "No skills in this category." %}</p>
+          {% endif %}
+        {% else %}
+          <p class="text-gray-500 italic">{% trans "No category selected." %}</p>
+        {% endif %}
+      </section>
+
+      <!-- 🚀 [projects-section] -->
+      <section class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-green-700 text-center">{% trans "Latest Projects" %}</h2>
+
+          {% if projects %}
+            <div class="grid md:grid-cols-2 gap-8">
+              {% for project in projects %}
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-xl">
+                  {% if project.image %}
+                    <img src="{{ project.image.url }}" alt="{{ project.title }}"
+                         class="w-full h-56 object-cover">
+                  {% endif %}
+                  <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">{{ project.title }}</h3>
+                    <p class="text-gray-600 mb-4">{{ project.short_description }}</p>
+                    <a href="{% url 'public:project_detail' project.slug %}"
+                       class="inline-block px-4 py-2 text-sm bg-green-600 text-white rounded hover:bg-green-700 transition">
+                      {% trans "See Details" %}
+                    </a>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          {% else %}
+            <p class="text-gray-500 italic text-center">{% trans "No projects to display." %}</p>
+          {% endif %}
+        </div>
+      </section>
   </div>
-
-</body>
-</html>
+{% endblock %}

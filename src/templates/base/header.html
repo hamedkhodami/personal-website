@@ -1,0 +1,47 @@
+{% load static %}
+{% load i18n %}
+
+<!-- 🧭 [navbar] -->
+<nav class="fixed top-0 left-0 w-full bg-gradient-to-r from-white to-gray-50 shadow transition-all z-50 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+
+    <!-- 💠 برند -->
+    <a href="#" class="text-xl font-extrabold text-blue-700 tracking-wide hover:text-blue-900 transition-all duration-200">
+      {% trans "Hamed.dev" %}
+    </a>
+
+    <!-- 💻 منوی دسکتاپ -->
+    <ul class="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+      <li><a href="#" class="relative group transition-all hover:text-blue-600">
+        {% trans "Home" %}
+        <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 group-hover:w-full transition-all"></span>
+      </a></li>
+      <li><a href="#" class="relative group transition-all hover:text-blue-600">
+        {% trans "About" %}
+        <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 group-hover:w-full transition-all"></span>
+      </a></li>
+      <li><a href="#" class="relative group transition-all hover:text-blue-600">
+        {% trans "Contact" %}
+        <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 group-hover:w-full transition-all"></span>
+      </a></li>
+    </ul>
+
+    <!-- 📱 دکمه منوی موبایل -->
+    <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- 📱 منوی موبایل -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-sm animate-fade-in">
+    <ul class="flex flex-col gap-3 px-4 py-4 text-gray-700 font-medium">
+      <li><a href="#" class="hover:text-blue-600 transition">{% trans "Home" %}</a></li>
+      <li><a href="#" class="hover:text-blue-600 transition">{% trans "About" %}</a></li>
+      <li><a href="#" class="hover:text-blue-600 transition">{% trans "Contact" %}</a></li>
+    </ul>
+  </div>
+</nav>

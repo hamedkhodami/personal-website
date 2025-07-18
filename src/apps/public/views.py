@@ -10,22 +10,14 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        category_id = kwargs.get('category_id')
+        category_id = self.kwargs.get('category_id')
         category = get_object_or_404(SkillCategory, id=category_id) if category_id else None
 
+        context['about'] = AboutMe.objects.first()
         context['category'] = category
+        context['categories'] = SkillCategory.objects.all()
         context['skills'] = Skill.objects.filter(category=category).order_by('-created_at') if category else []
         context['projects'] = Project.objects.all().order_by('-created_at')[:2]
-
-        return context
-
-
-class AboutView(TemplateView):
-    template_name = 'public/about.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['about'] = AboutMe.objects.first()
 
         return context
 

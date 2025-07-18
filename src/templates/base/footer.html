@@ -1,0 +1,35 @@
+{% load static %}
+{% load i18n %}
+
+<!-- 🧾 [footer] -->
+<footer class="bg-gradient-to-r from-white to-gray-50 border-t mt-20 text-gray-600 text-sm">
+<div class="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+
+  <!-- ✨ متن -->
+  <p class="text-center md:text-left">
+    {% trans "Built with" %} <span class="font-semibold text-indigo-600">Django</span> &
+    <span class="font-semibold text-blue-500">TailwindCSS</span> —
+    {% trans "by Hamed ©" %} {{ now|date:"Y" }}
+  </p>
+
+  <!-- 🌐 لینک‌ها یا شبکه‌های اجتماعی -->
+  <div class="flex gap-4">
+    {% if about.github %}
+      <a href="{{ about.github }}" target="_blank" class="text-gray-500 hover:text-gray-700">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="..."/></svg>
+      </a>
+    {% endif %}
+    {% if about.linkedin %}
+      <a href="{{ about.linkedin }}" target="_blank" class="text-gray-500 hover:text-gray-700">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="..."/></svg>
+      </a>
+    {% endif %}
+    {% if about.telegram %}
+      <a href="{{ about.telegram }}" target="_blank" class="text-gray-500 hover:text-gray-700">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="..."/></svg>
+      </a>
+    {% endif %}
+  </div>
+
+</div>
+</footer>

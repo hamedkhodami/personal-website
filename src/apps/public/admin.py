@@ -100,6 +100,9 @@ class ProjectAdmin(admin.ModelAdmin):
         (_('Technology Stack'), {
             'fields': ('tech_stack',)
         }),
+        (_('date'), {
+            'fields': ('creation_at',)
+        }),
     )
 
     def project_url_link(self, obj):
