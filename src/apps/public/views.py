@@ -1,7 +1,6 @@
 from django.views.generic import DetailView, TemplateView
-from django.shortcuts import get_object_or_404
 
-from .models import AboutMe, SkillCategory, Skill, Project
+from .models import AboutMe, Skill, Project
 
 
 class HomeView(TemplateView):
@@ -10,14 +9,19 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        category_id = self.kwargs.get('category_id')
-        category = get_object_or_404(SkillCategory, id=category_id) if category_id else None
+        all_skills = Skill.objects.all()
+        ordered_levels = ['expert', 'intermediate', 'beginner']
 
-        context['about'] = AboutMe.objects.first()
-        context['category'] = category
-        context['categories'] = SkillCategory.objects.all()
-        context['skills'] = Skill.objects.filter(category=category).order_by('-created_at') if category else []
-        context['projects'] = Project.objects.all().order_by('-created_at')[:2]
+        sorted_skills = sorted(
+            all_skills,
+            key=lambda skill: ordered_levels.index(skill.level) if skill.level in ordered_levels else 3
+        )
+
+        context.update({
+            'about': AboutMe.objects.first(),
+            'skills': sorted_skills,
+            'projects': Project.objects.order_by('-created_at')[:2],
+        })
 
         return context
 

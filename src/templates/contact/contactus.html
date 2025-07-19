@@ -1,28 +1,96 @@
-{% load i18n %}
+{% extends "base/base.html" %}
 {% load static %}
+{% load i18n %}
 
-<html lang="fa">
-<head>
-    <meta charset="UTF-8">
-    <title>{% trans "Contact Us" %}</title>
-</head>
-<body>
+{% block title %}
+  {% trans "Contact Us" %}
+{% endblock %}
 
-    <h1>{% trans "Contact Us" %}</h1>
+{% block body %}
+<section class="py-20 px-4 bg-primary">
+  <div class="max-w-2xl mx-auto bg-secondary rounded-2xl shadow-lg p-10">
+
+    <h1 class="text-3xl font-bold text-gray-800 mb-4 text-center">
+      {% trans "Let's Get in Touch" %}
+    </h1>
+    <p class="text-gray-600 text-sm text-center mb-8">
+      {% trans "Fill out the form and we'll get back to you shortly." %}
+    </p>
 
     {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
+      <div class="mb-6 text-green-600 text-sm">
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+      </div>
     {% endif %}
 
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">{% trans "Send" %}</button>
+    <form method="post" class="space-y-6">
+      {% csrf_token %}
+      <!-- full_name -->
+      <div>
+        <input type="text" name="full_name"
+               class="block w-full px-4 py-3 rounded-xl bg-[#9482ad] text-white placeholder-white border border-[#7f6ba9] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent sm:text-sm transition"
+               placeholder="{% trans 'Full name' %}">
+        {% if form.full_name.errors %}
+          <p class="text-red-500 text-xs mt-1">{{ form.full_name.errors.0 }}</p>
+        {% endif %}
+      </div>
+
+      <!-- email -->
+      <div>
+        <input type="email" name="email"
+               class="block w-full px-4 py-3 rounded-xl bg-[#9482ad] text-white placeholder-white border border-[#7f6ba9] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent sm:text-sm transition"
+               placeholder="{% trans 'Email address' %}">
+        {% if form.email.errors %}
+          <p class="text-red-500 text-xs mt-1">{{ form.email.errors.0 }}</p>
+        {% endif %}
+      </div>
+
+      <!-- phone_number -->
+      <div>
+        <input type="text" name="phone_number"
+               class="block w-full px-4 py-3 rounded-xl bg-[#9482ad] text-white placeholder-white border border-[#7f6ba9] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent sm:text-sm transition"
+               placeholder="{% trans 'phone number' %}">
+        {% if form.phone_number.errors %}
+          <p class="text-red-500 text-xs mt-1">{{ form.phone_number.errors.0 }}</p>
+        {% endif %}
+      </div>
+
+      <!-- subject -->
+      <div>
+        <select name="{{ form.subject.name }}" id="{{ form.subject.id_for_label }}"
+                class="block w-full px-4 py-3 rounded-xl bg-[#9482ad] text-white placeholder-white border border-[#7f6ba9] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent sm:text-sm transition appearance-none">
+          {% for option in form.subject.field.choices %}
+            <option value="{{ option.0 }}" {% if option.0 == form.subject.value %}selected{% endif %}>
+              {{ option.1 }}
+            </option>
+          {% endfor %}
+        </select>
+        {% if form.subject.errors %}
+          <p class="text-red-500 text-xs mt-1">{{ form.subject.errors.0 }}</p>
+        {% endif %}
+      </div>
+
+      <!-- message -->
+      <div>
+        <textarea name="message"
+                  class="block w-full px-4 py-3 rounded-xl bg-[#9482ad] text-white placeholder-white border border-[#7f6ba9] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent sm:text-sm resize-none transition"
+                  rows="5"
+                  placeholder="{% trans 'Your message...' %}"></textarea>
+        {% if form.message.errors %}
+          <p class="text-red-500 text-xs mt-1">{{ form.message.errors.0 }}</p>
+        {% endif %}
+      </div>
+
+      <div>
+        <button type="submit"
+                class="w-full py-3 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">
+          {% trans "Send Message" %}
+        </button>
+      </div>
     </form>
 
-</body>
-</html>
+  </div>
+</section>
+{% endblock %}

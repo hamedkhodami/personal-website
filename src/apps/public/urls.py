@@ -5,7 +5,6 @@ app_name = 'apps.public'
 
 urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
-    path('skills/<int:category_id>/', views.HomeView.as_view(), name='skill_category'),  # TODO
     path('projects/', views.ProjectsView.as_view(), name='projects'),
     path('projects/<slug:slug>/', views.DetailProjectView.as_view(), name='project_detail'),
 

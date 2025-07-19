@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from apps.core.models import BaseModel
+from .enums import SkillLevel as Level
 
 
 class AboutMe(BaseModel):
@@ -20,19 +21,11 @@ class AboutMe(BaseModel):
         return str(_('About Me'))
 
 
-class SkillCategory(models.Model):
-    title = models.CharField(_('Category Title'), max_length=64)
-
-    class Meta:
-        verbose_name = _("Skill Category")
-
-    def __str__(self):
-        return self.title
-
-
-class Skill(models.Model):
+class Skill(BaseModel):
     title = models.CharField(_('Skill'), max_length=64)
-    category = models.ForeignKey(SkillCategory, on_delete=models.CASCADE, related_name='skills')
+    icon = models.ImageField(_('Icon'), upload_to='skill/icon', null=True, blank=True)
+    level = models.CharField(_('Level'), choices=Level.choices, default=Level.BEGINNER
+                             , null=True, blank=True)
 
     class Meta:
         verbose_name = _("Skill")
@@ -48,7 +41,7 @@ class Project(BaseModel):
     description = models.TextField(_('Description'))
     short_description = models.CharField(_('Shot Description'), max_length=250)
     tech_stack = models.ManyToManyField('public.Skill', verbose_name=_('Technologies Used'), blank=True)
-    image = models.ImageField(_('Image'), upload_to='projects/', null=True, blank=True)
+    image = models.ImageField(_('Image'), upload_to='projects/image', null=True, blank=True)
     project_url = models.URLField(_('Live URL'), null=True, blank=True)
     github_url = models.URLField(_('GitHub URL'), null=True, blank=True)
     creation_at = models.CharField(_("Creation At"), null=True, blank=True)

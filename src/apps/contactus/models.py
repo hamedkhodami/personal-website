@@ -19,5 +19,9 @@ class ContactUs(BaseModel):
     is_read = models.BooleanField(_('Is read?'), default=False)
     is_replied = models.BooleanField(_('Is replied?'), default=False)
 
+    class Meta:
+        verbose_name = _('Contactus')
+        verbose_name_plural = _('Contactus')
+
     def __str__(self):
         return f"{self.full_name} - {self.get_subject_display()}"

@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
 
-from .models import AboutMe, Project, ProjectImage, SkillCategory, Skill
+from .models import AboutMe, Project, ProjectImage, Skill
 
 
 @admin.register(AboutMe)
@@ -50,23 +50,11 @@ class SkillInline(admin.TabularInline):
     show_change_link = True
 
 
-@admin.register(SkillCategory)
-class SkillCategoryAdmin(admin.ModelAdmin):
-    list_display = ('title', 'skill_count')
-    search_fields = ('title',)
-    inlines = [SkillInline]
-
-    def skill_count(self, obj):
-        return obj.skills.count()
-    skill_count.short_description = _('Number of Skills')
-
-
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):
-    list_display = ('title', 'category')
-    list_filter = ('category',)
+    list_display = ('title', 'level', 'icon')
+    list_filter = ('level',)
     search_fields = ('title',)
-    autocomplete_fields = ('category',)
 
 
 class ProjectImageInline(admin.TabularInline):

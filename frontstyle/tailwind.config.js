@@ -7,10 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#6366F1',
-        secondary: '#E2E8F0',
-        accountForm: '#F9FFF1',
-        errorRed: '#FF0000',
+        primary: '#545054',
+        secondary: '#FFF0E7',
       },
       backgroundImage: {
         'gradient-blue-gray': 'linear-gradient(to right, #4A90E2, #E2E8F0)',

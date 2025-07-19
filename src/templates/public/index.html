@@ -9,83 +9,119 @@
 
 
 {% block body %}
-  <div class="container mx-auto px-4 py-8 mt-20">
+  <div class="bg-primary container mx-auto px-4 py-8 pt-[72px]">
 
-      <!-- 🧠 [about-section] -->
-      <section class="mb-16 px-4">
-          <div class="max-w-4xl mx-auto bg-white rounded-xl shadow p-8 grid md:grid-cols-2 gap-6 items-start">
+      <!-- about-section -->
+      <section class="mb-20 px-4">
+        <div class="max-w-6xl mx-auto bg-secondary rounded-2xl shadow-lg p-10 grid md:grid-cols-3 gap-10 items-start">
 
-            <!-- 👤 بایوگرافی -->
-            <div>
-              <h2 class="text-2xl font-extrabold text-gray-800 mb-4">{% trans "About Me" %}</h2>
-              <p class="text-gray-700 leading-relaxed whitespace-pre-line">
-                {{ about.bio }}
-              </p>
+          <!-- bio -->
+          <div class="md:col-span-2">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">{% trans "About Me" %}</h2>
+            <p class="text-gray-700 leading-loose whitespace-pre-line text-[16px]">
+              {{ about.bio }}
+            </p>
 
-              {% if about.resume_file %}
-                <a href="{{ about.resume_file.url }}" target="_blank" class="inline-block mt-6 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">
-                  {% trans "Download Resume" %}
-                </a>
-              {% endif %}
-            </div>
-
-            <!-- 🌐 لینک‌ها -->
-            <div class="space-y-3">
-              <h3 class="text-lg font-semibold text-gray-700 mb-2">{% trans "Find Me Online" %}</h3>
-              <ul class="flex flex-col gap-2 text-blue-700 font-medium">
-                {% if about.github %}
-                  <li><a href="{{ about.github }}" target="_blank" class="hover:underline">GitHub</a></li>
-                {% endif %}
-                {% if about.linkedin %}
-                  <li><a href="{{ about.linkedin }}" target="_blank" class="hover:underline">LinkedIn</a></li>
-                {% endif %}
-                {% if about.telegram %}
-                  <li><a href="{{ about.telegram }}" target="_blank" class="hover:underline">Telegram</a></li>
-                {% endif %}
-                {% if about.instagram %}
-                  <li><a href="{{ about.instagram }}" target="_blank" class="hover:underline">Instagram</a></li>
-                {% endif %}
-                {% if about.email %}
-                  <li><a href="mailto:{{ about.email }}" class="hover:underline">📧 {{ about.email }}</a></li>
-                {% endif %}
-              </ul>
-            </div>
-
+            {% if about.resume_file %}
+              <a href="{{ about.resume_file.url }}" target="_blank"
+                 class="inline-block mt-8 px-5 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all shadow-md">
+                {% trans "Download Resume" %}
+              </a>
+            {% endif %}
           </div>
+
+          <!-- links -->
+          <div class="space-y-5">
+            <h3 class="text-xl font-semibold text-gray-700 mb-4">{% trans "Find Me Online" %}</h3>
+            <ul class="flex flex-col gap-3 text-blue-700 font-medium">
+
+              {% if about.github %}
+                <li>
+                  <a href="{{ about.github }}" target="_blank" class="flex items-center gap-2 hover:text-blue-500 transition">
+                    <!-- GitHub -->
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.07 3.29 9.37 7.86 10.89.58.1.79-.25.79-.56v-2.01c-3.2.69-3.88-1.53-3.88-1.53-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.95.1-.75.4-1.25.72-1.54-2.56-.29-5.26-1.28-5.26-5.68 0-1.25.45-2.27 1.19-3.07-.12-.29-.52-1.46.11-3.04 0 0 .98-.31 3.2 1.18a11.07 11.07 0 0 1 5.82 0c2.2-1.49 3.18-1.18 3.18-1.18.64 1.58.24 2.75.12 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.71 5.38-5.29 5.67.41.35.77 1.05.77 2.11v3.12c0 .31.2.67.8.56A10.5 10.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+                    GitHub
+                  </a>
+                </li>
+              {% endif %}
+
+              {% if about.linkedin %}
+                <li>
+                  <a href="{{ about.linkedin }}" target="_blank" class="flex items-center gap-2 hover:text-blue-500 transition">
+                    <!-- LinkedIn -->
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM2 9h6v12H2zM9 9h5.6v1.7h.1c.8-1.5 2.7-1.7 3.7-.6 1 .9 1.6 2.3 1.6 3.9V21h-6v-6c0-1.3-.5-2-1.6-2s-1.8.7-1.8 2v6H9z"/></svg>
+                    LinkedIn
+                  </a>
+                </li>
+              {% endif %}
+
+              {% if about.telegram %}
+                <li>
+                  <a href="{{ about.telegram }}" target="_blank" class="flex items-center gap-2 hover:text-blue-500 transition">
+                    <!-- Telegram -->
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M9.999 15.2l-.494 4.3c.708 0 1.017-.308 1.389-.679l2.665-2.534 5.533 4.025c1.012.681 1.733.32 1.992-.907l3.602-16.901c.29-1.343-.484-1.949-1.47-1.615L1.158 8.618c-1.34.459-1.32 1.112-.235 1.392l5.643 1.764L19.62 4.425"/></svg>
+                    Telegram
+                  </a>
+                </li>
+              {% endif %}
+
+              {% if about.email %}
+                <li>
+                  <a href="mailto:{{ about.email }}" class="flex items-center gap-2 hover:text-teal-600 transition">
+                    <!-- email -->
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M2 4c-.554 0-1 .446-1 1v14c0 .554.446 1 1 1h20c.554 0 1-.446 1-1V5c0-.554-.446-1-1-1H2zm0 2h20v.511l-10 5.511-10-5.511V6zm0 2.634l8.708 4.786L2 19.134V8.634zm20 0v10.5l-8.708-5.714L22 8.634z"/></svg>
+                    {{ about.email }}
+                  </a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+
+        </div>
       </section>
 
-      <!-- 💡 [skills-section] -->
-      <section class="mb-12">
-        {% if category %}
-          <h2 class="text-2xl font-bold mb-4 text-blue-700">
-            {% trans "Skills in category:" %} {{ category.title }}
-          </h2>
+      <!-- [skills-section] -->
+      <section class="mb-20 px-10">
+        <h2 class="text-5xl font-bold mb-8 text-white text-center">{% trans "Skills" %}</h2>
 
-          {% if skills %}
-            <ul class="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {% for skill in skills %}
-                <li class="bg-white p-4 rounded shadow hover:shadow-md transition">
-                  {{ skill.title }}
-                </li>
-              {% endfor %}
-            </ul>
-          {% else %}
-            <p class="text-gray-500 italic">{% trans "No skills in this category." %}</p>
-          {% endif %}
+        {% if skills %}
+          <ul class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {% for skill in skills %}
+              <li class="bg-secondary rounded-2xl shadow hover:shadow-xl p-6 flex flex-col items-center text-center transition-all">
+
+                {% if skill.icon %}
+                  <img src="{{ skill.icon.url }}" alt="{{ skill.title }}" class="w-12 h-12 object-contain mb-4">
+                {% else %}
+                  <div class="bg-secondary w-12 h-12 flex items-center justify-center mb-4 rounded-full bg-gray-100 text-gray-400 text-sm font-bold">
+                    ?
+                  </div>
+                {% endif %}
+
+                <h3 class="bg-secondary text-gray-800 font-semibold text-[15px] mb-2">{{ skill.title }}</h3>
+
+                {% if skill.level %}
+                  <span class="bg-secondary text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-500">
+                    {{ skill.get_level_display }}
+                  </span>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
         {% else %}
-          <p class="text-gray-500 italic">{% trans "No category selected." %}</p>
+          <p class="text-gray-500 italic text-center">{% trans "No skills available." %}</p>
         {% endif %}
       </section>
 
-      <!-- 🚀 [projects-section] -->
+      <!-- [projects-section] -->
       <section class="py-16 px-4">
         <div class="max-w-7xl mx-auto">
-          <h2 class="text-3xl font-bold mb-12 text-green-700 text-center">{% trans "Latest Projects" %}</h2>
+          <h2 class="text-5xl font-bold mb-8 text-white text-center">{% trans "Latest Projects" %}</h2>
 
           {% if projects %}
             <div class="grid md:grid-cols-2 gap-8">
               {% for project in projects %}
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-xl">
+                <a href="{% url 'public:project_detail' project.slug %}">
+                  <div class="bg-secondary rounded-xl shadow-lg overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-xl">
                   {% if project.image %}
                     <img src="{{ project.image.url }}" alt="{{ project.title }}"
                          class="w-full h-56 object-cover">
@@ -93,12 +129,9 @@
                   <div class="p-6">
                     <h3 class="text-xl font-bold text-gray-800 mb-2">{{ project.title }}</h3>
                     <p class="text-gray-600 mb-4">{{ project.short_description }}</p>
-                    <a href="{% url 'public:project_detail' project.slug %}"
-                       class="inline-block px-4 py-2 text-sm bg-green-600 text-white rounded hover:bg-green-700 transition">
-                      {% trans "See Details" %}
-                    </a>
                   </div>
                 </div>
+                </a>
               {% endfor %}
             </div>
           {% else %}

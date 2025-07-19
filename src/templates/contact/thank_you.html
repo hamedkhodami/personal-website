@@ -1,12 +1,35 @@
+{% extends "base/base.html" %}
+{% load static %}
 {% load i18n %}
-<html lang="fa">
-<head>
-    <meta charset="UTF-8">
-    <title>{% trans "Message Sent" %}</title>
-</head>
-<body>
-    <h2>{% trans "Thank You!" %}</h2>
-    <p>{% trans "Your message has been received. We'll get back to you if needed." %}</p>
-    <a href="{% url 'contact:contact-us' %}">{% trans "Back to Contact Form" %}</a>
-</body>
-</html>
+
+{% block title %}
+  {% trans "Message Sent" %}
+{% endblock %}
+
+{% block body %}
+<section class="min-h-screen flex items-center justify-center px-4 bg-primary">
+  <div class="max-w-xl w-full bg-secondary rounded-2xl shadow-xl p-10 text-center">
+
+    <div class="text-green-500 text-6xl mb-6">✅</div>
+
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">
+      {% trans "Thank You!" %}
+    </h2>
+
+    <p class="text-gray-600 text-[15px] leading-relaxed mb-6">
+      {% trans "Your message has been successfully submitted. We appreciate your interest!" %}
+    </p>
+
+    <ul class="text-sm text-gray-500 mb-8 space-y-2">
+      <li>📬 {% trans "We'll review your message promptly." %}</li>
+      <li>🤝 {% trans "If required, we'll contact you soon." %}</li>
+      <li>🛡️ {% trans "Your information is safe and secure." %}</li>
+    </ul>
+
+    <a href="{% url 'contact:contact-us' %}"
+       class="inline-block px-6 py-2.5 text-sm bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-700 transition">
+      {% trans "Back to Contact Form" %}
+    </a>
+  </div>
+</section>
+{% endblock %}
