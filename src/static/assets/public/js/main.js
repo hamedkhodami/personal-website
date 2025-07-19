@@ -12,3 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("❌");
   }
 });
+
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".js-icon-github").forEach(el => el.innerHTML = `<svg ...>...</svg>`);
+  document.querySelectorAll(".js-icon-linkedin").forEach(el => el.innerHTML = `<svg ...>...</svg>`);
+  document.querySelectorAll(".js-icon-telegram").forEach(el => el.innerHTML = `<svg ...>...</svg>`);
+  document.querySelectorAll(".js-icon-email").forEach(el => el.innerHTML = `<svg ...>...</svg>`);
+});

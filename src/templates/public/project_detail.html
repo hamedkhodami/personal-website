@@ -57,16 +57,15 @@
       {% if project_detail.images.all %}
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           {% for image in project_detail.images.all %}
-            <div class="rounded overflow-hidden shadow-sm">
+            <div class="overflow-hidden rounded-2xl shadow group hover:shadow-lg transition">
               <img src="{{ image.image.url }}" alt="{{ image.alt_text }}"
-                   class="w-full h-40 object-cover">
+                   class="w-full h-40 object-cover group-hover:scale-105 transition duration-300">
             </div>
           {% endfor %}
         </div>
       {% else %}
         <p class="text-gray-500 italic">{% trans "No gallery images yet." %}</p>
       {% endif %}
-
     </div>
   </div>
 </section>

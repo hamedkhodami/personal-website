@@ -9,18 +9,20 @@
 {% block body %}
 <section class="py-20 px-4 bg-primary">
   <div class="max-w-7xl mx-auto">
-    <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">
+    <h1 class="text-4xl sm:text-5xl font-extrabold mb-16 text-white text-center tracking-tight">
       {% trans "My Projects" %}
     </h1>
 
     {% if projects %}
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {% for project in projects %}
-          <div class="bg-secondary  rounded-2xl shadow-lg overflow-hidden transition hover:-translate-y-1 hover:shadow-xl">
+          <div class="group block bg-secondary rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-1">
             <a href="{% url 'public:project_detail' project.slug %}">
               {% if project.image %}
-                <img src="{{ project.image.url }}" alt="{{ project.title }}"
-                     class="w-full h-56 object-cover">
+                  <div class="aspect-video overflow-hidden rounded-t-3xl">
+                    <img src="{{ project.image.url }}" alt="{{ project.title }}"
+                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                  </div>
               {% endif %}
               <div class="p-6 flex flex-col h-full justify-between">
                 <div>

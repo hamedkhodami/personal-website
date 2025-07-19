@@ -1,22 +1,29 @@
 {% load static %}
 {% load i18n %}
 
-<!-- 🧾 [footer] -->
-<footer class="bg-gradient-red-yellow border-t border-gray-300 text-gray-700 text-sm">
-  <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<!-- [footer] -->
+<!-- [footer] -->
+<footer class="bg-gradient-red-yellow text-gray-700 text-sm">
+  <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col items-center text-center gap-4">
 
-    <!-- description -->
-    <div class="text-center md:text-left">
-      <p class="mb-2">
-        {% trans "Built with" %}
-        <span class="font-bold text-indigo-500">Django</span> &
-        <span class="font-bold text-blue-500">TailwindCSS</span>
-      </p>
-      <p>
-        {% trans "by" %}
-        <span class="text-green-600 font-semibold">Hamed</span> © {{ now|date:"Y" }}
-      </p>
-    </div>
+    <!-- Brand slogan -->
+    <p class="font-semibold text-gray-800 text-base">
+      {% trans "Turning clean code into real impact." %}
+    </p>
+
+    <!-- tech stack -->
+    <p>
+      {% trans "Built with" %}
+      <span class="font-bold text-blue-700 ">Django</span> &
+      <span class="font-bold text-blue-700 ">TailwindCSS</span>
+    </p>
+
+    <!-- author & copyright -->
+    <p>
+      <a href="https://www.hamedkhodami.ir" class="text-blue-700  font-semibold hover:text-green-800 transition duration-150" target="_blank" rel="noopener">
+        HamedKhodami
+      </a> © {{ now|date:"Y" }}
+    </p>
 
   </div>
 </footer>

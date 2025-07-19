@@ -1,12 +1,14 @@
 {% load static %}
 {% load i18n %}
 
-<!-- 🧭 [navbar] -->
+<!-- [navbar] -->
 <nav class="fixed top-0 left-0 w-full bg-gradient-red-yellow shadow transition-all z-50 backdrop-blur-md">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
 
-    <!-- brand -->
-    <a href="#" class="text-xl font-extrabold text-blue-700 tracking-wide hover:text-blue-900 transition-all duration-200">
+    <!-- Brand Logo-->
+    <a href="{% url 'public:home' %}"
+       class="flex items-center gap-2 text-xl font-extrabold text-blue-700 tracking-wide hover:text-blue-900 transition-all duration-200">
+      <img src="{% static 'public/images/favicon.ico' %}" alt="Hamed.dev Logo" class="w-6 h-6">
       {% trans "Hamed.dev" %}
     </a>
 
@@ -17,7 +19,7 @@
         <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 group-hover:w-full transition-all"></span>
       </a></li>
       <li><a href="{% url 'public:projects' %}" class="relative group transition-all hover:text-blue-600">
-        {% trans "Project" %}
+        {% trans "Projects" %}
         <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 group-hover:w-full transition-all"></span>
       </a></li>
       <li><a href="{% url 'contact:contact-us' %}" class="relative group transition-all hover:text-blue-600">
@@ -40,7 +42,7 @@
   <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-sm animate-fade-in">
     <ul class="flex flex-col gap-3 px-4 py-4 text-gray-700 font-medium">
       <li><a href="{% url 'public:home' %}" class="hover:text-blue-600 transition">{% trans "Home" %}</a></li>
-      <li><a href="{% url 'public:projects' %}" class="hover:text-blue-600 transition">{% trans "Project" %}</a></li>
+      <li><a href="{% url 'public:projects' %}" class="hover:text-blue-600 transition">{% trans "Projects" %}</a></li>
       <li><a href="{% url 'contact:contact-us' %}" class="hover:text-blue-600 transition">{% trans "Contact" %}</a></li>
     </ul>
   </div>
