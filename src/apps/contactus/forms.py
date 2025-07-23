@@ -4,9 +4,12 @@ from django import forms
 from django.utils.translation import gettext_lazy as _
 from persian_tools import digits
 from .models import ContactUs
+from captcha.fields import CaptchaField
 
 
 class ContactUsForm(forms.ModelForm):
+    captcha = CaptchaField()
+
     class Meta:
         model = ContactUs
         fields = ['full_name', 'email', 'phone_number', 'subject', 'message']
@@ -14,6 +17,7 @@ class ContactUsForm(forms.ModelForm):
             'subject': forms.Select(attrs={'class': 'form-select'}),
             'message': forms.Textarea(attrs={'rows': 5, 'placeholder': _('Your message...')}),
         }
+
 
     def clean_full_name(self):
         name = self.cleaned_data.get('full_name', '').strip()

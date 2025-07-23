@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
 
-from .models import AboutMe, Project, ProjectImage, Skill
+from .models import AboutMe, Project, ProjectImage, Skill, JobExperience
 
 
 @admin.register(AboutMe)
@@ -106,3 +106,18 @@ class ProjectAdmin(admin.ModelAdmin):
         return "-"
 
     github_url_link.short_description = _("GitHub URL")
+
+
+@admin.register(JobExperience)
+class JobExperienceAdmin(admin.ModelAdmin):
+    list_display = ('company_name', 'position', 'start_date', 'end_date', 'location', 'description', 'created_at')
+    list_filter = ('company_name', 'position')
+    search_fields = ('company_name', 'position',)
+    fieldsets = (
+        (_('job Info'), {
+            'fields': ('company_name', 'position', 'location', 'description')
+        }),
+        (_('date'), {
+            'fields': ('start_date', 'end_date')
+        }),
+    )

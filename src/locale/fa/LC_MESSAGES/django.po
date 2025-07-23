@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-19 17:34+0330\n"
-"PO-Revision-Date: 2025-07-19 17:37+0330\n"
+"POT-Creation-Date: 2025-07-21 12:45+0330\n"
+"PO-Revision-Date: 2025-07-21 12:48+0330\n"
 "Last-Translator: None None <None>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,507 +19,543 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.10.2\n"
 
-#: .\apps\account\admin.py:19
+#: .\src\apps\account\admin.py:19
 msgid "Personal info"
 msgstr "اطلاعات شخصی"
 
-#: .\apps\account\admin.py:20
+#: .\src\apps\account\admin.py:20
 msgid "Verifications"
 msgstr "تأییدها"
 
-#: .\apps\account\admin.py:21
+#: .\src\apps\account\admin.py:21
 msgid "Dates"
 msgstr "تایخ ها"
 
-#: .\apps\account\apps.py:8
+#: .\src\apps\account\apps.py:8
 msgid "Account"
 msgstr "حساب کاربری"
 
-#: .\apps\account\forms.py:11 .\apps\account\models.py:14
-#: .\apps\contactus\models.py:14
+#: .\src\apps\account\forms.py:11 .\src\apps\account\models.py:14
+#: .\src\apps\contactus\models.py:14
 msgid "Phone number"
 msgstr "شماره تلفن"
 
-#: .\apps\account\forms.py:12
+#: .\src\apps\account\forms.py:12
 msgid "Password"
 msgstr "رمز عبور"
 
-#: .\apps\account\forms.py:13
+#: .\src\apps\account\forms.py:13
 msgid "Password repeat"
 msgstr "تکرار رمز عبور"
 
-#: .\apps\account\forms.py:24
+#: .\src\apps\account\forms.py:24
 msgid "Enter a valid phone number"
 msgstr "شماره تلفن معتبر وارد کنید"
 
-#: .\apps\account\forms.py:33
+#: .\src\apps\account\forms.py:33
 msgid "Passwords are not match."
 msgstr "رمزهای عبور مطابقت ندارند."
 
-#: .\apps\account\managers.py:11
+#: .\src\apps\account\managers.py:11
 msgid "Entered phone number is not valid"
 msgstr "شماره تلفن وارد شده معتبر نیست"
 
-#: .\apps\account\managers.py:20
+#: .\src\apps\account\managers.py:20
 msgid "Users must have a mobile number!"
 msgstr "کاربران باید شماره موبایل داشته باشند!"
 
-#: .\apps\account\models.py:15 .\apps\contactus\models.py:13
-#: .\apps\public\models.py:15
+#: .\src\apps\account\models.py:15 .\src\apps\contactus\models.py:13
+#: .\src\apps\public\models.py:15
 msgid "Email"
 msgstr "ایمیل"
 
-#: .\apps\account\models.py:16
+#: .\src\apps\account\models.py:16
 msgid "First name"
 msgstr "نام"
 
-#: .\apps\account\models.py:17
+#: .\src\apps\account\models.py:17
 msgid "Last name"
 msgstr "نام خانوادگی"
 
-#: .\apps\account\models.py:18
+#: .\src\apps\account\models.py:18
 msgid "Active"
 msgstr "فعال"
 
-#: .\apps\account\models.py:19
+#: .\src\apps\account\models.py:19
 msgid "Admin"
 msgstr "ادمین"
 
-#: .\apps\account\models.py:20
+#: .\src\apps\account\models.py:20
 msgid "Verify"
 msgstr "تأیید"
 
-#: .\apps\account\models.py:21
+#: .\src\apps\account\models.py:21
 msgid "Secret token"
 msgstr "توکن مخفی"
 
-#: .\apps\account\models.py:22
+#: .\src\apps\account\models.py:22
 msgid "Creation time"
 msgstr "زمان ایجاد"
 
-#: .\apps\account\models.py:23
+#: .\src\apps\account\models.py:23
 msgid "Update time"
 msgstr "زمان به‌روزرسانی"
 
-#: .\apps\account\models.py:29
+#: .\src\apps\account\models.py:29
 msgid "User"
 msgstr "کاربر"
 
-#: .\apps\account\models.py:30
+#: .\src\apps\account\models.py:30
 msgid "Users"
 msgstr "کاربران"
 
-#: .\apps\account\models.py:36
+#: .\src\apps\account\models.py:36
 msgid "No Name"
 msgstr "بدون نام"
 
-#: .\apps\contactus\admin.py:20
+#: .\src\apps\contactus\admin.py:20
 msgid "Status"
 msgstr "وضعیت"
 
-#: .\apps\contactus\admin.py:23
+#: .\src\apps\contactus\admin.py:23
 msgid "Metadata"
 msgstr "فراداده"
 
-#: .\apps\contactus\apps.py:8 .\apps\contactus\models.py:23
-#: .\apps\contactus\models.py:24
-#| msgid "Contact Us"
+#: .\src\apps\contactus\apps.py:8 .\src\apps\contactus\models.py:23
+#: .\src\apps\contactus\models.py:24
 msgid "Contactus"
 msgstr "تماس با ما"
 
-#: .\apps\contactus\enums.py:6
+#: .\src\apps\contactus\enums.py:6
 msgid "Job / Collaboration"
 msgstr "شغلی / همکاری"
 
-#: .\apps\contactus\enums.py:7
+#: .\src\apps\contactus\enums.py:7
 msgid "Technical Question"
 msgstr "سوال فنی"
 
-#: .\apps\contactus\enums.py:8
+#: .\src\apps\contactus\enums.py:8
 msgid "Other"
 msgstr "سایر"
 
-#: .\apps\contactus\forms.py:15 .\templates\contact\contactus.html:80
+#: .\src\apps\contactus\forms.py:15 .\src\templates\contact\contactus.html:80
 msgid "Your message..."
 msgstr "پیام شما..."
 
-#: .\apps\contactus\forms.py:21
+#: .\src\apps\contactus\forms.py:21
 msgid "Full name must be at least 3 characters long."
 msgstr "نام کامل باید حداقل ۳ کاراکتر داشته باشد."
 
-#: .\apps\contactus\forms.py:27
+#: .\src\apps\contactus\forms.py:27
 msgid "Enter a valid email address."
 msgstr "یک آدرس ایمیل معتبر وارد کنید."
 
-#: .\apps\contactus\forms.py:35
+#: .\src\apps\contactus\forms.py:35
 msgid "Enter a valid phone number."
 msgstr "یک شماره تلفن معتبر وارد کنید."
 
-#: .\apps\contactus\forms.py:41
+#: .\src\apps\contactus\forms.py:41
 msgid "Message must be at least 10 characters long."
 msgstr "پیام باید حداقل 10 کاراکتر داشته باشد."
 
-#: .\apps\contactus\models.py:12 .\templates\contact\contactus.html:34
+#: .\src\apps\contactus\models.py:12 .\src\templates\contact\contactus.html:34
 msgid "Full name"
 msgstr "نام ونام خانوادگی"
 
-#: .\apps\contactus\models.py:15
+#: .\src\apps\contactus\models.py:15
 msgid "Subject"
 msgstr "موضوع"
 
-#: .\apps\contactus\models.py:17
+#: .\src\apps\contactus\models.py:17
 msgid "Message"
 msgstr "پیام"
 
-#: .\apps\contactus\models.py:19
+#: .\src\apps\contactus\models.py:19
 msgid "Is read?"
 msgstr "خوانده شده؟"
 
-#: .\apps\contactus\models.py:20
+#: .\src\apps\contactus\models.py:20
 msgid "Is replied?"
 msgstr "پاسخ داده شده؟"
 
-#: .\apps\contactus\views.py:26
+#: .\src\apps\contactus\views.py:26
 msgid "Your message has been sent successfully."
 msgstr "پیام شما با موفقیت ارسال شد."
 
-#: .\apps\core\models.py:7
+#: .\src\apps\core\models.py:7
 msgid "Creation Time"
 msgstr "زمان ایجاد"
 
-#: .\apps\core\models.py:8
+#: .\src\apps\core\models.py:8
 msgid "Update Time"
 msgstr "زمان بروز رسانی"
 
-#: .\apps\core\utils.py:53
+#: .\src\apps\core\utils.py:53
 #, python-format
 msgid "%(days)s days ago."
-msgstr ""
+msgstr "%(days)s روز قبل"
 
-#: .\apps\core\utils.py:55
+#: .\src\apps\core\utils.py:55
 #, python-format
 msgid "%(hours)s hours ago."
-msgstr ""
+msgstr "%(hours)s ساعت قبل"
 
-#: .\apps\core\utils.py:57
+#: .\src\apps\core\utils.py:57
 #, python-format
 msgid "%(minutes)s minutes ago."
-msgstr ""
+msgstr "%(minutes)s دقیقه قبل"
 
-#: .\apps\core\utils.py:59
+#: .\src\apps\core\utils.py:59
 msgid "Moments ago"
 msgstr "لحظاتی پیش"
 
-#: .\apps\core\utils.py:72 .\apps\core\utils.py:86
+#: .\src\apps\core\utils.py:72 .\src\apps\core\utils.py:86
 msgid "Entered data is not correct."
 msgstr "اطلاعات وارد شده صحیح نیست."
 
-#: .\apps\public\admin.py:13
+#: .\src\apps\public\admin.py:13
 msgid "Personal Info"
 msgstr "اطلاعات شخصی"
 
-#: .\apps\public\admin.py:16
+#: .\src\apps\public\admin.py:16
 msgid "Social Links"
 msgstr "لینک‌ شبکه های اجتماعی"
 
-#: .\apps\public\admin.py:25 .\apps\public\models.py:11
-#: .\templates\public\project.html:41
+#: .\src\apps\public\admin.py:25 .\src\apps\public\models.py:11
 msgid "GitHub"
 msgstr "گیت هاب"
 
-#: .\apps\public\admin.py:31 .\apps\public\models.py:12
+#: .\src\apps\public\admin.py:31 .\src\apps\public\models.py:12
 msgid "LinkedIn"
 msgstr "لینکدین"
 
-#: .\apps\public\admin.py:37
+#: .\src\apps\public\admin.py:37
 msgid "Resume"
 msgstr "رزومه"
 
-#: .\apps\public\admin.py:42
+#: .\src\apps\public\admin.py:42
 msgid "No resume uploaded"
 msgstr "رزومه ای آپلود نشده است"
 
-#: .\apps\public\admin.py:43
+#: .\src\apps\public\admin.py:43
 msgid "Resume Preview"
 msgstr "پیش‌نمایش رزومه"
 
-#: .\apps\public\admin.py:71
+#: .\src\apps\public\admin.py:71
 msgid "Preview"
 msgstr "پیش‌نمایش"
 
-#: .\apps\public\admin.py:82
+#: .\src\apps\public\admin.py:82
 msgid "Project Info"
 msgstr "اطلاعات پروژه"
 
-#: .\apps\public\admin.py:85
+#: .\src\apps\public\admin.py:85
 msgid "Links"
 msgstr "لینک ها"
 
-#: .\apps\public\admin.py:88
+#: .\src\apps\public\admin.py:88
 msgid "Technology Stack"
 msgstr "فناوری های استفاده شده"
 
-#: .\apps\public\admin.py:91
+#: .\src\apps\public\admin.py:91
 msgid "date"
 msgstr "تاریخ"
 
-#: .\apps\public\admin.py:101 .\apps\public\models.py:45
+#: .\src\apps\public\admin.py:101 .\src\apps\public\models.py:45
 msgid "Live URL"
 msgstr "آدرس اینترنتی"
 
-#: .\apps\public\admin.py:108 .\apps\public\models.py:46
+#: .\src\apps\public\admin.py:108 .\src\apps\public\models.py:46
 msgid "GitHub URL"
 msgstr "آدرس گیت هاب"
 
-#: .\apps\public\apps.py:8
+#: .\src\apps\public\apps.py:8
 msgid "Public"
 msgstr "عمومی"
 
-#: .\apps\public\enums.py:6
+#: .\src\apps\public\enums.py:6
 msgid "Beginner"
 msgstr "مبتدی"
 
-#: .\apps\public\enums.py:7
+#: .\src\apps\public\enums.py:7
 msgid "Intermediate"
 msgstr "متوسط"
 
-#: .\apps\public\enums.py:8
+#: .\src\apps\public\enums.py:8
 msgid "Expert"
 msgstr "حرفه ایی"
 
-#: .\apps\public\models.py:9
+#: .\src\apps\public\models.py:9
 msgid "Biography"
 msgstr "بیوگرافی"
 
-#: .\apps\public\models.py:10
+#: .\src\apps\public\models.py:10
 msgid "Resume (PDF)"
 msgstr "رزومه (PDF)"
 
-#: .\apps\public\models.py:13
+#: .\src\apps\public\models.py:13
 msgid "Telegram"
 msgstr "تلگرام"
 
-#: .\apps\public\models.py:14
+#: .\src\apps\public\models.py:14
 msgid "Instagram"
 msgstr "اینستاگرام"
 
-#: .\apps\public\models.py:18 .\apps\public\models.py:21
-#: .\templates\public\index.html:20
+#: .\src\apps\public\models.py:18 .\src\apps\public\models.py:21
+#: .\src\templates\public\index.html:20
 msgid "About Me"
 msgstr "درباره ی من"
 
-#: .\apps\public\models.py:25 .\apps\public\models.py:31
+#: .\src\apps\public\models.py:25 .\src\apps\public\models.py:31
 msgid "Skill"
 msgstr "مهارت"
 
-#: .\apps\public\models.py:26
+#: .\src\apps\public\models.py:26
 msgid "Icon"
 msgstr "آیکون"
 
-#: .\apps\public\models.py:27
+#: .\src\apps\public\models.py:27
 msgid "Level"
 msgstr "سطح"
 
-#: .\apps\public\models.py:32 .\templates\public\index.html:85
+#: .\src\apps\public\models.py:32 .\src\templates\public\index.html:91
 msgid "Skills"
 msgstr "مهارت ها"
 
-#: .\apps\public\models.py:39
+#: .\src\apps\public\models.py:39
 msgid "Title"
 msgstr "عنوان"
 
-#: .\apps\public\models.py:40
+#: .\src\apps\public\models.py:40
 msgid "Slug"
 msgstr "برچسب"
 
-#: .\apps\public\models.py:41
+#: .\src\apps\public\models.py:41 .\src\apps\public\models.py:76
 msgid "Description"
 msgstr "توضیحات"
 
-#: .\apps\public\models.py:42
+#: .\src\apps\public\models.py:42
 msgid "Shot Description"
 msgstr "توضیحات مختصر"
 
-#: .\apps\public\models.py:43
+#: .\src\apps\public\models.py:43
 msgid "Technologies Used"
 msgstr "فناوری‌های مورد استفاده"
 
-#: .\apps\public\models.py:44 .\apps\public\models.py:59
+#: .\src\apps\public\models.py:44 .\src\apps\public\models.py:59
 msgid "Image"
 msgstr "تصویر"
 
-#: .\apps\public\models.py:47
-#| msgid "Creation time"
+#: .\src\apps\public\models.py:47
 msgid "Creation At"
 msgstr "زمان ایجاد"
 
-#: .\apps\public\models.py:50 .\templates\base\header.html:20
-#: .\templates\base\header.html:43
+#: .\src\apps\public\models.py:50
 msgid "Project"
 msgstr "پروژه"
 
-#: .\apps\public\models.py:51 .\templates\public\project.html:6
+#: .\src\apps\public\models.py:51 .\src\templates\base\header.html:22
+#: .\src\templates\base\header.html:45 .\src\templates\public\project.html:6
 msgid "Projects"
 msgstr "پروژه ها"
 
-#: .\apps\public\models.py:60
+#: .\src\apps\public\models.py:60
 msgid "Alt Text"
 msgstr "متن جایگزین"
 
-#: .\apps\public\models.py:63
+#: .\src\apps\public\models.py:63
 msgid "Project Image"
 msgstr "تصویر پروژه"
 
-#: .\apps\public\models.py:64
+#: .\src\apps\public\models.py:64
 msgid "Project Images"
 msgstr "تصاویر پروژه"
 
-#: .\templates\base\footer.html:11
+#: .\src\apps\public\models.py:71
+#| msgid "No Name"
+msgid "Company Name"
+msgstr "نام شرکت"
+
+#: .\src\apps\public\models.py:72
+#| msgid "Title"
+msgid "Job Title"
+msgstr "عنوان شغلی"
+
+#: .\src\apps\public\models.py:73
+msgid "Start Date"
+msgstr "تاریخ شروع"
+
+#: .\src\apps\public\models.py:74
+#| msgid "Dates"
+msgid "End Date"
+msgstr "تاریخ پایان"
+
+#: .\src\apps\public\models.py:74
+msgid "now"
+msgstr "اکنون"
+
+#: .\src\apps\public\models.py:75
+msgid "Location"
+msgstr "مکان"
+
+#: .\src\apps\public\models.py:79 .\src\templates\public\index.html:173
+msgid "Job Experience"
+msgstr "تجربه شغلی"
+
+#: .\src\apps\public\models.py:80
+msgid "Job Experiences"
+msgstr "تجربه های شغلی"
+
+#: .\src\templates\base\footer.html:11
+msgid "Turning clean code into real impact."
+msgstr "تبدیل کد تمیز به یک کد تأثیرگذار واقعی."
+
+#: .\src\templates\base\footer.html:16
 msgid "Built with"
 msgstr "ساخته شده توسط"
 
-#: .\templates\base\footer.html:16
-msgid "by"
-msgstr "با"
-
-#: .\templates\base\header.html:10
+#: .\src\templates\base\header.html:12
 msgid "Hamed.dev"
 msgstr ""
 
-#: .\templates\base\header.html:16 .\templates\base\header.html:42
-#| msgid "Homepage"
+#: .\src\templates\base\header.html:18 .\src\templates\base\header.html:44
 msgid "Home"
 msgstr "صفحه اصلی"
 
-#: .\templates\base\header.html:24 .\templates\base\header.html:44
-#| msgid "Contact Us"
+#: .\src\templates\base\header.html:26 .\src\templates\base\header.html:46
 msgid "Contact"
 msgstr "ارتباط با ما"
 
-#: .\templates\contact\contactus.html:6
+#: .\src\templates\contact\contactus.html:6
 msgid "Contact Us"
 msgstr "تماس با ما"
 
-#: .\templates\contact\contactus.html:14
+#: .\src\templates\contact\contactus.html:14
 msgid "Let's Get in Touch"
 msgstr "بیایید با هم در تماس باشیم"
 
-#: .\templates\contact\contactus.html:17
+#: .\src\templates\contact\contactus.html:17
 msgid "Fill out the form and we'll get back to you shortly."
 msgstr "فرم را پر کنید و ما به زودی با شما تماس خواهیم گرفت"
 
-#: .\templates\contact\contactus.html:44
-#| msgid "Enter a valid email address."
+#: .\src\templates\contact\contactus.html:44
 msgid "Email address"
 msgstr "یک آدرس ایمیل معتبر وارد کنید."
 
-#: .\templates\contact\contactus.html:54
-#| msgid "Phone number"
+#: .\src\templates\contact\contactus.html:54
 msgid "phone number"
 msgstr "شماره تلفن"
 
-#: .\templates\contact\contactus.html:89
-#| msgid "Message"
+#: .\src\templates\contact\contactus.html:89
 msgid "Send Message"
 msgstr "پیام"
 
-#: .\templates\contact\thank_you.html:6
+#: .\src\templates\contact\thank_you.html:6
 msgid "Message Sent"
 msgstr "پیام ارسال شد"
 
-#: .\templates\contact\thank_you.html:16
+#: .\src\templates\contact\thank_you.html:16
 msgid "Thank You!"
 msgstr "متشکرم! "
 
-#: .\templates\contact\thank_you.html:20
-#| msgid ""
-#| "Your message has been received. We'll get back to you if needed."
+#: .\src\templates\contact\thank_you.html:20
 msgid ""
 "Your message has been successfully submitted. We appreciate your interest!"
 msgstr "پیام شما با موفقیت ارسال شد. از توجه شما سپاسگزاریم!"
 
-#: .\templates\contact\thank_you.html:24
+#: .\src\templates\contact\thank_you.html:24
 msgid "We'll review your message promptly."
 msgstr "ما پیام شما را به سرعت بررسی خواهیم کرد"
 
-#: .\templates\contact\thank_you.html:25
+#: .\src\templates\contact\thank_you.html:25
 msgid "If required, we'll contact you soon."
 msgstr "در صورت نیاز، به زودی با شما تماس خواهیم گرفت"
 
-#: .\templates\contact\thank_you.html:26
+#: .\src\templates\contact\thank_you.html:26
 msgid "Your information is safe and secure."
 msgstr "اطلاعات شما امن و محفوظ است"
 
-#: .\templates\contact\thank_you.html:31
+#: .\src\templates\contact\thank_you.html:31
 msgid "Back to Contact Form"
 msgstr "بازگشت به فرم تماس"
 
-#: .\templates\public\index.html:7
+#: .\src\templates\public\index.html:7
 msgid "Homepage"
 msgstr "صفحه اصلی"
 
-#: .\templates\public\index.html:28
+#: .\src\templates\public\index.html:28
 msgid "Download Resume"
 msgstr "دانلود رزومه"
 
-#: .\templates\public\index.html:35
+#: .\src\templates\public\index.html:35
 msgid "Find Me Online"
 msgstr ""
 
-#: .\templates\public\index.html:111
-#| msgid "No information available yet."
+#: .\src\templates\public\index.html:125
 msgid "No skills available."
 msgstr "هیچ مهارتی در دسترس نیست."
 
-#: .\templates\public\index.html:118
+#: .\src\templates\public\index.html:133
 msgid "Latest Projects"
 msgstr "آخرین پروژه‌ها"
 
-#: .\templates\public\index.html:138
+#: .\src\templates\public\index.html:163
 msgid "No projects to display."
 msgstr "پروژه‌ای برای نمایش وجود ندارد."
 
-#: .\templates\public\project.html:13
+#: .\src\templates\public\index.html:191
+msgid "Company:"
+msgstr "شرکت"
+
+#: .\src\templates\public\index.html:194
+msgid "Location:"
+msgstr "مکان"
+
+#: .\src\templates\public\index.html:218
+#| msgid "No projects yet."
+msgid "No job experience to show yet."
+msgstr "هنوز هیچ تجربه ی شغلی وجود ندارد."
+
+#: .\src\templates\public\project.html:13
 msgid "My Projects"
 msgstr "پروژه‌های من"
 
-#: .\templates\public\project.html:35
-#| msgid "Live URL"
-msgid "Live"
-msgstr "آدرس اینترنتی"
-
-#: .\templates\public\project.html:46
-#| msgid "See Details"
-msgid "Details"
-msgstr "جزئیات"
-
-#: .\templates\public\project.html:55
+#: .\src\templates\public\project.html:38
 msgid "No projects yet."
 msgstr "هنوز هیچ پروژه‌ای وجود ندارد."
 
-#: .\templates\public\project_detail.html:27
+#: .\src\templates\public\project_detail.html:27
 msgid "Tech Stack:"
 msgstr "فناوری:"
 
-#: .\templates\public\project_detail.html:37
+#: .\src\templates\public\project_detail.html:37
 msgid "No technologies listed."
 msgstr "هیچ فناوری ذکر نشده است."
 
-#: .\templates\public\project_detail.html:45
+#: .\src\templates\public\project_detail.html:45
 msgid "Visit Live Project"
 msgstr "از پروژه زنده دیدن کنید"
 
-#: .\templates\public\project_detail.html:51
+#: .\src\templates\public\project_detail.html:51
 msgid "GitHub Repository"
 msgstr "مخزن گیت‌هاب"
 
-#: .\templates\public\project_detail.html:56
+#: .\src\templates\public\project_detail.html:56
 msgid "Gallery"
 msgstr "گالری"
 
-#: .\templates\public\project_detail.html:67
+#: .\src\templates\public\project_detail.html:67
 msgid "No gallery images yet."
 msgstr "هنوز هیچ تصویری در گالری وجود ندارد."
+
+#~ msgid "by"
+#~ msgstr "با"
+
+#~ msgid "Live"
+#~ msgstr "آدرس اینترنتی"
+
+#~ msgid "Details"
+#~ msgstr "جزئیات"
 
 #~ msgid "Send"
 #~ msgstr "ارسال"

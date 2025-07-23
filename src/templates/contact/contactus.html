@@ -83,6 +83,18 @@
         {% endif %}
       </div>
 
+      <!-- Captcha -->
+      <div class="flex flex-col items-center gap-2 mb-4">
+        <div class="flex items-center gap-4">
+          {{ form.captcha.image|safe }}
+        </div>
+
+        {{ form.captcha }}
+        {% if form.captcha.errors %}
+          <p class="text-red-500 text-xs mt-1">{{ form.captcha.errors.0 }}</p>
+        {% endif %}
+      </div>
+
       <div>
         <button type="submit"
                 class="w-full py-3 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">

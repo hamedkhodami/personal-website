@@ -37,6 +37,7 @@ INSTALLED_APPS = [
 
     # third party app
     'rosetta',
+    'captcha',
 
     # apps
     'apps.core.apps.CoreConfig',
@@ -192,3 +193,6 @@ CELERY_TASK_DEFAULT_QUEUE = 'default'
 # --ROSETTA------------------------------------------------------
 ROSETTA_ACCESS_CONTROL_FUNCTION = lambda u: u.is_staff
 # ---------------------------------------------------------------
+
+
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']

@@ -1,6 +1,6 @@
 from django.views.generic import DetailView, TemplateView
 
-from .models import AboutMe, Skill, Project
+from .models import AboutMe, Skill, Project, JobExperience
 
 
 class HomeView(TemplateView):
@@ -21,6 +21,7 @@ class HomeView(TemplateView):
             'about': AboutMe.objects.first(),
             'skills': sorted_skills,
             'projects': Project.objects.order_by('-created_at')[:2],
+            'jobs': JobExperience.objects.all().order_by('-created_at'),
         })
 
         return context

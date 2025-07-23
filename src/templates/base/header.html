@@ -14,15 +14,18 @@
 
     <!-- desktop -->
     <ul class="hidden md:flex items-center gap-8 text-gray-700 font-medium">
-      <li><a href="{% url 'public:home' %}" class="relative group transition-all hover:text-blue-600">
+      <li class="{% if request.resolver_match.url_name == 'home' %}text-blue-600{% endif %}">
+        <a href="{% url 'public:home' %}" class="relative group transition-all hover:text-blue-600">
         {% trans "Home" %}
         <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 group-hover:w-full transition-all"></span>
       </a></li>
-      <li><a href="{% url 'public:projects' %}" class="relative group transition-all hover:text-blue-600">
+      <li class="{% if request.resolver_match.url_name == 'projects' %}text-blue-600{% endif %}">
+        <a href="{% url 'public:projects' %}" class="relative group transition-all hover:text-blue-600">
         {% trans "Projects" %}
         <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 group-hover:w-full transition-all"></span>
       </a></li>
-      <li><a href="{% url 'contact:contact-us' %}" class="relative group transition-all hover:text-blue-600">
+      <li class="{% if request.resolver_match.url_name == 'contact-us' %}text-blue-600{% endif %}">
+        <a href="{% url 'contact:contact-us' %}" class="relative group transition-all hover:text-blue-600">
         {% trans "Contact" %}
         <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 group-hover:w-full transition-all"></span>
       </a></li>
@@ -41,9 +44,15 @@
   <!-- mobile -->
   <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-sm animate-fade-in">
     <ul class="flex flex-col gap-3 px-4 py-4 text-gray-700 font-medium">
-      <li><a href="{% url 'public:home' %}" class="hover:text-blue-600 transition">{% trans "Home" %}</a></li>
-      <li><a href="{% url 'public:projects' %}" class="hover:text-blue-600 transition">{% trans "Projects" %}</a></li>
-      <li><a href="{% url 'contact:contact-us' %}" class="hover:text-blue-600 transition">{% trans "Contact" %}</a></li>
+      <li class="{% if request.resolver_match.url_name == 'home' %}text-blue-600{% endif %}">
+        <a href="{% url 'public:home' %}" class="hover:text-blue-600 transition">{% trans "Home" %}</a>
+      </li>
+      <li class="{% if request.resolver_match.url_name == 'projects' %}text-blue-600{% endif %}">
+        <a href="{% url 'public:projects' %}" class="hover:text-blue-600 transition">{% trans "Projects" %}</a>
+      </li>
+      <li class="{% if request.resolver_match.url_name == 'contact-us' %}text-blue-600{% endif %}">
+        <a href="{% url 'contact:contact-us' %}" class="hover:text-blue-600 transition">{% trans "Contact" %}</a>
+      </li>
     </ul>
   </div>
 </nav>

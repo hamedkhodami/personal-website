@@ -9,6 +9,7 @@ urlpatterns = [
     path('contactus/', include('apps.contactus.urls', namespace='contactus')),
 
     path('rosetta/', include('rosetta.urls')),
+    path('captcha/', include("captcha.urls")),
 
 ]
 if settings.DEBUG:

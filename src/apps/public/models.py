@@ -67,3 +67,19 @@ class ProjectImage(BaseModel):
         return f"{self.project.title} - Image"
 
 
+class JobExperience(BaseModel):
+    company_name = models.CharField(_('Company Name'), max_length=128)
+    position = models.CharField(_('Job Title'), max_length=128)
+    start_date = models.CharField(_('Start Date'), max_length=128)
+    end_date = models.CharField(_('End Date'), max_length=128, default=_("now"))
+    location = models.CharField(_('Location'), max_length=128, blank=True)
+    description = models.TextField(_('Description'), blank=True)
+
+    class Meta:
+        verbose_name = _('Job Experience')
+        verbose_name_plural = _('Job Experiences')
+
+    def __str__(self):
+        return f"{self.position} at {self.company_name}"
+
+
