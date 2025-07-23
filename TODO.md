@@ -32,6 +32,7 @@
 
 -----
 # 🚩 F3 — Advanced Systems & DevOps
+
 ## 📌 Step 1: Write Dockerfile + .dockerignore
 ## 🔗 Step 2: Define docker-compose.yml (web, db, redis, celery)
 ## 🔗 Step 3: Test container-based execution (web + db)
