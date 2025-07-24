@@ -1,0 +1,97 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:alpine
+    ports:
+      - "6381:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+#  db:
+#    image: postgres:14-alpine
+#    environment:
+#      POSTGRES_DB: your_db_name
+#      POSTGRES_USER: your_db_user
+#      POSTGRES_PASSWORD: your_db_password
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: ../
+      dockerfile: devops/Dockerfile
+    image: worknest-app
+    working_dir: /app/src
+    volumes:
+      - .:/app
+      - static_volume:/app/static
+      - media_volume:/app/media
+    ports:
+      - "8000:8000"
+#    depends_on:
+#      redis:
+#        condition: service_healthy
+#      db:
+#        condition: service_started
+    depends_on:
+      - redis
+    env_file:
+      - ../src/.env
+
+  celery_worker:
+    image: worknest-app
+    command: celery -A config worker --loglevel=info
+    working_dir: /app/src
+    volumes:
+      - .:/app
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    depends_on:
+      - redis
+#      - db
+    env_file:
+      - ../src/.env
+
+  celery_beat:
+    image: worknest-app
+    command: celery -A config beat --loglevel=info
+    working_dir: /app/src
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+#      - db
+    env_file:
+      - ../src/.env
+
+  flower:
+    image: mher/flower
+    ports:
+      - "5555:5555"
+    depends_on:
+      - redis
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - static_volume:/app/static
+      - media_volume:/app/media
+    depends_on:
+      - web
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
