@@ -195,4 +195,6 @@ ROSETTA_ACCESS_CONTROL_FUNCTION = lambda u: u.is_staff
 # ---------------------------------------------------------------
 
 
+# --CAPTCHA------------------------------------------------------
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
+# ---------------------------------------------------------------

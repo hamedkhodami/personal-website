@@ -32,5 +32,5 @@
 ## ✓ Step 2: Define docker-compose.yml (web, db, redis, celery)
 ## ✓ Step 3: Test container-based execution (web + db)
 ## ✓ Step 4: Setup Celery Worker/Beat with Redis
-## 📌 Step 5: Implement async task (ContactUs email)
-## 🔗 Step 6: Setup proper logging (Celery + Django + Docker)
+## ✓  Step 5: Implement async task (ContactUs email)
+## 📌 Step 6: Setup proper logging (Celery + Django + Docker)
