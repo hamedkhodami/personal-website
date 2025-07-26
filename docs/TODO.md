@@ -4,13 +4,9 @@
 # 🚩F1 Backend Core Development
 
 ## ✓ level 1 complete core
-
 ## ✓ level 2 complete account
-
 ## ✓ level 3 complete ContactUs
-
 ## ✓ level 4 complete public
-
 ## ✓ level 5 rosetta
 
 
@@ -26,6 +22,7 @@
 ## ✓ Step 6: UI final QA + minor SEO structure
 
 -----
+
 # 🚩 F3 — Advanced Systems & DevOps
 
 ## ✓ Step 1: Write Dockerfile + .dockerignore
