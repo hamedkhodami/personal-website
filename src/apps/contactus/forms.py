@@ -1,5 +1,3 @@
-# apps/contact/forms.py
-
 from django import forms
 from django.utils.translation import gettext_lazy as _
 from persian_tools import digits
