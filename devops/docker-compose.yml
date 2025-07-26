@@ -27,7 +27,6 @@ services:
     image: worknest-app
     working_dir: /app/src
     volumes:
-      - .:/app
       - static_volume:/app/static
       - media_volume:/app/media
     ports:
@@ -46,8 +45,6 @@ services:
     image: worknest-app
     command: celery -A config worker --loglevel=info
     working_dir: /app/src
-    volumes:
-      - .:/app
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8000/" ]
       interval: 10s
@@ -63,8 +60,6 @@ services:
     image: worknest-app
     command: celery -A config beat --loglevel=info
     working_dir: /app/src
-    volumes:
-      - .:/app
     depends_on:
       - redis
 #      - db
