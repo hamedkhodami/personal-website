@@ -46,10 +46,10 @@ pip uninstall psycopg2
 - [✓] Use docker stats or htop for performance snapshot
 
 ### 🔁 Step 2: Cleanup & Final Docker image
-- [ ] Add production .env variables
-- [ ] Optimize image layers if needed
-- [ ] Tag image for deployment
-- [ ] Push to private registry (if using)
+- [✓] Add production .env variables
+- [✓] Optimize image layers if needed
+- [✓]Tag image for deployment
+- [✓] Push to private registry (if using)
 
 ### 🌐 Step 3: Setup domain and Nginx for live use
 - [ ] Buy or assign domain

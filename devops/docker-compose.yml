@@ -28,6 +28,9 @@ services:
     volumes:
       - static_volume:/var/www/static
       - media_volume:/app/src/static/media
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+
     ports:
       - "8000:8000"
     depends_on:
@@ -40,23 +43,35 @@ services:
 
   celery_worker:
     image: worknest-app
-    command: ["celery", "worker"]
+    entrypoint: [ "/entrypoint.sh" ]
+    command: ["celery", "worker","-E"]
     working_dir: /app/src
     depends_on:
       - redis
       - db
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - static_volume:/var/www/static
     env_file:
       - ../src/.env
 
+
   celery_beat:
     image: worknest-app
-    command: ["celery", "worker"]
+    entrypoint: ["/entrypoint.sh"]
+    command: [ "celery", "beat", "--schedule=/app/src/celerybeat-schedule" ]
     working_dir: /app/src
     depends_on:
       - redis
       - db
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - static_volume:/var/www/static
     env_file:
       - ../src/.env
+
 
   flower:
     image: mher/flower
@@ -64,6 +79,9 @@ services:
       - "5555:5555"
     depends_on:
       - redis
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
     environment:
       - CELERY_BROKER_URL=redis://redis:6379/0
 

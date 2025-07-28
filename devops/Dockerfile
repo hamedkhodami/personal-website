@@ -17,4 +17,6 @@ COPY devops/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
+RUN useradd --create-home --shell /bin/bash celeryuser
+
 CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
