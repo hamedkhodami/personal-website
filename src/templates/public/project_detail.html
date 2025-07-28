@@ -13,7 +13,7 @@
     {% if project_detail.image %}
       <div class="relative w-full h-72 md:h-96 overflow-hidden rounded-t-2xl shadow-md">
         <img src="{{ project_detail.image.url }}" alt="{{ project_detail.title }}"
-             class="absolute inset-0 w-full h-full object-cover z-0">
+          class="w-full h-auto object-contain rounded-t-2xl shadow-md">
       </div>
     {% endif %}
 
@@ -97,7 +97,7 @@
                    x-on:click="activeImage = '{{ image.image.url }}'">
                 <img src="{{ image.image.url }}"
                      alt="{{ image.alt_text }}"
-                     class="w-full h-40 object-cover group-hover:scale-105 transition duration-300" />
+                     class="w-full h-40 object-contain group-hover:scale-105 transition duration-300 bg-black" />
               </div>
             {% endfor %}
           </div>

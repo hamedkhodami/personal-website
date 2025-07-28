@@ -12,76 +12,69 @@
   <div class="py-20 px-4 bg-primary">
 
       <!-- about-section -->
-      <section class="mb-20 px-4">
-        <div class="max-w-6xl mx-auto bg-secondary rounded-3xl shadow-xl p-10 grid md:grid-cols-2 gap-10 items-center">
+      <section class="mb-20 px-4 sm:px-3">
+  <div class="max-w-6xl mx-auto bg-secondary rounded-3xl shadow-xl sm:p-6 p-10 grid md:grid-cols-2 gap-10 items-center">
 
-          <!-- bio -->
-          <div>
-            <h2 class="text-3xl font-extrabold text-gray-800 mb-4 tracking-tight">{% trans "About Me" %}</h2>
-            <p class="text-gray-700 leading-loose whitespace-pre-line text-[17px]">
-              {{ about.bio }}
-            </p>
+    <!-- bio -->
+    <div>
+      <h2 class="text-3xl sm:text-2xl font-extrabold text-gray-800 mb-4 tracking-tight">{% trans "About Me" %}</h2>
+      <p class="text-gray-700 leading-relaxed text-[16px] sm:text-[15px] break-words whitespace-normal">
+        {{ about.bio }}
+      </p>
 
-            {% if about.resume_file %}
-              <a href="{{ about.resume_file.url }}" download target="_blank"
-                 class="inline-block mt-6 px-5 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all shadow-lg font-medium">
-                {% trans "Download Resume" %}
-              </a>
-            {% endif %}
-          </div>
+      {% if about.resume_file %}
+        <a href="{{ about.resume_file.url }}" download target="_blank"
+           class="inline-block mt-6 px-5 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all shadow-lg font-medium text-sm sm:text-xs">
+          {% trans "Download Resume" %}
+        </a>
+      {% endif %}
+    </div>
 
-          <!-- links card -->
-          <div class="bg-white rounded-2xl shadow-md p-6 space-y-5">
-            <h3 class="text-lg font-semibold text-gray-800">Find Me Online</h3>
-            <ul class="space-y-3 text-sm text-gray-700">
+    <!-- links card -->
+    <div class="bg-white rounded-2xl shadow-md p-6 sm:p-4 space-y-5 border border-gray-200">
+      <h3 class="text-lg sm:text-base font-semibold text-gray-800">Find Me Online</h3>
+      <ul class="space-y-3 text-sm sm:text-[13px] text-gray-700">
 
-              {% if about.github %}
-              <li>
-                <a href="{{ about.github }}" target="_blank" class="flex items-center gap-3 hover:text-blue-600 transition">
-                  <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3 .8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6A10.5 10.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/>
-                  </svg>
-                  <span>GitHub</span>
-                </a>
-              </li>
-              {% endif %}
+        {% if about.github %}
+        <li>
+          <a href="{{ about.github }}" target="_blank" class="flex items-center gap-3 hover:text-blue-600 transition">
+            <svg class="w-5 h-5 text-gray-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">...</svg>
+            <span>GitHub</span>
+          </a>
+        </li>
+        {% endif %}
 
-              {% if about.linkedin %}
-              <li>
-                <a href="{{ about.linkedin }}" target="_blank" class="flex items-center gap-3 hover:text-blue-600 transition">
-                  <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM2 9h6v12H2zM9 9h5.6v1.7h.1c.8-1.5 2.7-1.7 3.7-.6 1 .9 1.6 2.3 1.6 3.9V21h-6v-6c0-1.3-.5-2-1.6-2s-1.8.7-1.8 2v6H9z"/>
-                  </svg>
-                  <span>LinkedIn</span>
-                </a>
-              </li>
-              {% endif %}
+        {% if about.linkedin %}
+        <li>
+          <a href="{{ about.linkedin }}" target="_blank" class="flex items-center gap-3 hover:text-blue-600 transition">
+            <svg class="w-5 h-5 text-gray-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">...</svg>
+            <span>LinkedIn</span>
+          </a>
+        </li>
+        {% endif %}
 
-              {% if about.telegram %}
-              <li>
-                <a href="{{ about.telegram }}" target="_blank" class="flex items-center gap-3 hover:text-blue-600 transition">
-                  <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M9.999 15.2l-.494 4.3c.708 0 1.017-.308 1.389-.679l2.665-2.534 5.533 4.025c1.012.681 1.733.32 1.992-.907l3.602-16.901c.29-1.343-.484-1.949-1.47-1.615L1.158 8.618c-1.34.459-1.32 1.112-.235 1.392l5.643 1.764L19.62 4.425"/>
-                  </svg>
-                  <span>Telegram</span>
-                </a>
-              </li>
-              {% endif %}
+        {% if about.telegram %}
+        <li>
+          <a href="{{ about.telegram }}" target="_blank" class="flex items-center gap-3 hover:text-blue-600 transition">
+            <svg class="w-5 h-5 text-gray-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">...</svg>
+            <span>Telegram</span>
+          </a>
+        </li>
+        {% endif %}
 
-              {% if about.email %}
-              <li>
-                <a href="mailto:{{ about.email }}" class="flex items-center gap-3 hover:text-teal-600 transition">
-                  <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M2 4c-.554 0-1 .446-1 1v14c0 .554.446 1 1 1h20c.554 0 1-.446 1-1V5c0-.554-.446-1-1-1H2zm0 2h20v.511l-10 5.511-10-5.511V6zm0 2.634l8.708 4.786L2 19.134V8.634zm20 0v10.5l-8.708-5.714L22 8.634z"/>
-                  </svg>
-                  <span>{{ about.email }}</span>
-                </a>
-              </li>
-              {% endif %}
-            </ul>
-          </div>
-        </div>
-      </section>
+        {% if about.email %}
+        <li>
+          <a href="mailto:{{ about.email }}" class="flex items-center gap-3 hover:text-teal-600 transition">
+            <svg class="w-5 h-5 text-gray-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">...</svg>
+            <span>{{ about.email }}</span>
+          </a>
+        </li>
+        {% endif %}
+
+      </ul>
+    </div>
+  </div>
+</section>
 
       <!-- skills -->
       <section class="mb-24 px-6">
@@ -91,39 +84,38 @@
           </h2>
         </div>
 
-        {% if skills %}
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 justify-center">
-            {% for skill in skills %}
-              <div class="relative flex flex-col items-center justify-center group">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 sm:gap-10 justify-center">
+          {% for skill in skills %}
+            <div class="relative flex flex-col items-center justify-center group space-y-3 sm:space-y-2">
 
-                <!-- Circle background -->
-                <div class="w-40 h-40 rounded-full bg-secondary flex items-center justify-center shadow-lg transition group-hover:scale-105 p-4">
-                  {% if skill.icon %}
-                    <img src="{{ skill.icon.url }}" alt="{{ skill.title }}" class="w-full h-full object-contain" />
-                  {% else %}
-                    <span class="text-gray-400 font-bold text-xl">?</span>
-                  {% endif %}
-                </div>
-                <!-- Title -->
-                <h3 class="text-gray-800 font-semibold text-sm mt-4 group-hover:text-blue-600 transition">
-                  {{ skill.title }}
-                </h3>
-                <!-- Level badge -->
-                {% if skill.level %}
-                  <span class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] px-2 py-0.5 rounded-full shadow-sm">
-                    {{ skill.get_level_display }}
-                  </span>
+              <!-- Circle background -->
+              <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-secondary flex items-center justify-center shadow-lg transition group-hover:scale-105 p-4">
+                {% if skill.icon %}
+                  <img src="{{ skill.icon.url }}" alt="{{ skill.title }}" class="w-full h-full object-contain" />
+                {% else %}
+                  <span class="text-gray-400 font-bold text-xl">?</span>
                 {% endif %}
               </div>
-            {% endfor %}
-          </div>
-        {% else %}
-          <p class="text-gray-400 italic text-center mt-12">{% trans "No skills available." %}</p>
-        {% endif %}
+
+              <!-- Title -->
+              <h3 class="text-gray-800 font-semibold text-sm sm:text-[13px] group-hover:text-blue-600 transition">
+                {{ skill.title }}
+              </h3>
+
+              <!-- Level badge -->
+              {% if skill.level %}
+                <span class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] px-2 py-0.5 rounded-full shadow-sm">
+                  {{ skill.get_level_display }}
+                </span>
+              {% endif %}
+
+            </div>
+          {% endfor %}
+        </div>
       </section>
 
       <!-- [projects-section] -->
-      <section class="py-20 px-6">
+      <section class="py-18 px-6">
         <div class="max-w-7xl mx-auto">
           <h2 class="text-4xl sm:text-5xl font-extrabold mb-16 text-white text-center tracking-tight">
             {% trans "Latest Projects" %}
@@ -172,7 +164,7 @@
           {% if jobs %}
             <div class="space-y-10">
               {% for job in jobs %}
-                <div class="bg-secondary rounded-3xl shadow-md p-6 hover:shadow-xl transition-all group">
+                <div class="bg-secondary rounded-3xl shadow-md p-8 hover:shadow-xl transition-all group">
 
                   <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
                     <h3 class="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition">

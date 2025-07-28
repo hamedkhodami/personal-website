@@ -1,5 +1,5 @@
 # TODO LIST
-
+pip uninstall psycopg2
 ---
 # 🚩F1 Backend Core Development
 
