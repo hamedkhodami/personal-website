@@ -37,13 +37,13 @@
 
 ### ✅ Step 1: Run in production mode and verify all systems
 - [✓] Run docker compose up --build without debug tools
-- [ ] Test static and media files are served via nginx
-- [ ] Ensure Gunicorn starts from entrypoint correctly
-- [ ] Confirm Celery worker and beat are active
-- [ ] Open Flower UI at localhost:5555 and check status
-- [ ] Send test ContactUs form to validate async task
-- [ ] Monitor system logs (docker compose logs -f)
-- [ ] Use docker stats or htop for performance snapshot
+- [✓] Test static and media files are served via nginx
+- [✓] Ensure Gunicorn starts from entrypoint correctly
+- [✓] Confirm Celery worker and beat are active
+- [✓] Open Flower UI at localhost:5555 and check status
+- [✓] Send test ContactUs form to validate async task
+- [✓] Monitor system logs (docker compose logs -f)
+- [✓] Use docker stats or htop for performance snapshot
 
 ### 🔁 Step 2: Cleanup & Final Docker image
 - [ ] Add production .env variables

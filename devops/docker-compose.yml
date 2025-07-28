@@ -12,14 +12,12 @@ services:
   db:
       image: postgres:14-alpine
       restart: always
-      environment:
-        POSTGRES_DB: ${DB_NAME}
-        POSTGRES_USER: ${DB_USER}
-        POSTGRES_PASSWORD: ${DB_PASSWORD}
+      env_file:
+        - ../src/.env
       volumes:
         - postgres_data:/var/lib/postgresql/data
       ports:
-        - "5432:5432"
+        - "5435:5432"
 
   web:
     build:
