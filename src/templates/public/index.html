@@ -17,14 +17,14 @@
 
           <!-- bio -->
           <div class="flex flex-col justify-center space-y-6">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 text-right">{% trans "About Me" %}</h2>
+            <h2 class="text-3xl sm:text-4xl px-4 py-4 font-extrabold text-gray-800 text-right">{% trans "About Me" %}</h2>
 
             <p class="text-gray-700 leading-relaxed text-base sm:text-lg text-right">
               {{ about.bio }}
             </p>
 
             {% if about.resume_file %}
-              <div class="text-right">
+              <div class="text-right py-2">
                 <a href="{{ about.resume_file.url }}" download target="_blank"
                    class="inline-block px-6 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all shadow-md font-medium text-sm sm:text-base">
                   {% trans "Download Resume" %}
@@ -114,7 +114,7 @@
               </div>
 
               <!-- Title -->
-              <h3 class="text-gray-800 font-semibold text-sm sm:text-[13px] group-hover:text-blue-600 transition">
+              <h3 class="text-gray-800 py-4 font-semibold text-sm sm:text-[13px] group-hover:text-blue-600 transition">
                 {{ skill.title }}
               </h3>
 
