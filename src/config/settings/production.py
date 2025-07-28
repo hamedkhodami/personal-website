@@ -1,8 +1,7 @@
-from .base import REDIS_CONFIG
 import os
 
 
-# Database (postgresql)
+# ---Database (postgresql)-----------------------------------------
 DATABASES = {
     "default": {
         'ENGINE': 'django.db.backends.postgresql',
@@ -13,3 +12,4 @@ DATABASES = {
         "PORT": os.getenv("DB_PORT"),
     }
 }
+# -----------------------------------------------------------------
