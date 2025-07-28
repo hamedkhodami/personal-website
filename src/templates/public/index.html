@@ -12,69 +12,85 @@
   <div class="py-20 px-4 bg-primary">
 
       <!-- about-section -->
-      <section class="mb-20 px-4 sm:px-3">
-  <div class="max-w-6xl mx-auto bg-secondary rounded-3xl shadow-xl sm:p-6 p-10 grid md:grid-cols-2 gap-10 items-center">
+      <section class="mb-20 px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto bg-secondary rounded-3xl shadow-2xl px-6 py-12 sm:px-10 sm:py-14 md:grid md:grid-cols-2 md:gap-14 items-start">
 
-    <!-- bio -->
-    <div>
-      <h2 class="text-3xl sm:text-2xl font-extrabold text-gray-800 mb-4 tracking-tight">{% trans "About Me" %}</h2>
-      <p class="text-gray-700 leading-relaxed text-[16px] sm:text-[15px] break-words whitespace-normal">
-        {{ about.bio }}
-      </p>
+          <!-- bio -->
+          <div class="flex flex-col justify-center space-y-6">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 text-right">{% trans "About Me" %}</h2>
 
-      {% if about.resume_file %}
-        <a href="{{ about.resume_file.url }}" download target="_blank"
-           class="inline-block mt-6 px-5 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all shadow-lg font-medium text-sm sm:text-xs">
-          {% trans "Download Resume" %}
-        </a>
-      {% endif %}
-    </div>
+            <p class="text-gray-700 leading-relaxed text-base sm:text-lg text-right">
+              {{ about.bio }}
+            </p>
 
-    <!-- links card -->
-    <div class="bg-white rounded-2xl shadow-md p-6 sm:p-4 space-y-5 border border-gray-200">
-      <h3 class="text-lg sm:text-base font-semibold text-gray-800">Find Me Online</h3>
-      <ul class="space-y-3 text-sm sm:text-[13px] text-gray-700">
+            {% if about.resume_file %}
+              <div class="text-right">
+                <a href="{{ about.resume_file.url }}" download target="_blank"
+                   class="inline-block px-6 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all shadow-md font-medium text-sm sm:text-base">
+                  {% trans "Download Resume" %}
+                </a>
+              </div>
+            {% endif %}
+          </div>
 
-        {% if about.github %}
-        <li>
-          <a href="{{ about.github }}" target="_blank" class="flex items-center gap-3 hover:text-blue-600 transition">
-            <svg class="w-5 h-5 text-gray-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">...</svg>
-            <span>GitHub</span>
-          </a>
-        </li>
-        {% endif %}
+          <!-- links card -->
+          <div class="bg-white rounded-2xl shadow-md p-6 sm:p-8 space-y-5 border border-gray-200 w-full">
+            <h3 class="text-xl font-semibold text-gray-800 text-center md:text-left">Find Me Online</h3>
+            <ul class="space-y-4 text-sm text-gray-700">
 
-        {% if about.linkedin %}
-        <li>
-          <a href="{{ about.linkedin }}" target="_blank" class="flex items-center gap-3 hover:text-blue-600 transition">
-            <svg class="w-5 h-5 text-gray-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">...</svg>
-            <span>LinkedIn</span>
-          </a>
-        </li>
-        {% endif %}
+              {% if about.github %}
+              <li>
+                <a href="{{ about.github }}" target="_blank" class="flex items-center gap-3 hover:text-indigo-600 transition">
+                  <!-- GitHub Icon -->
+                  <svg class="w-5 h-5 text-gray-600 flex-none" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.2c-3.2.7-3.8-1.6-3.8-1.6-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.7-.3.8-.5.3-.6.5-.7.6-1.4-2.6-.3-5.4-1.3-5.4-6a4.7 4.7 0 0 1 1.2-3.2 4.4 4.4 0 0 1 .1-3.1s1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2a4.4 4.4 0 0 1 .1 3.1 4.7 4.7 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .5.4.7 1.1.7 2.1v3.1c0 .3.2.7.8.6a11.5 11.5 0 0 0 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+              </li>
+              {% endif %}
 
-        {% if about.telegram %}
-        <li>
-          <a href="{{ about.telegram }}" target="_blank" class="flex items-center gap-3 hover:text-blue-600 transition">
-            <svg class="w-5 h-5 text-gray-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">...</svg>
-            <span>Telegram</span>
-          </a>
-        </li>
-        {% endif %}
+              {% if about.linkedin %}
+              <li>
+                <a href="{{ about.linkedin }}" target="_blank" class="flex items-center gap-3 hover:text-blue-600 transition">
+                  <!-- LinkedIn Icon -->
+                  <svg class="w-5 h-5 text-gray-600 flex-none" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M4.98 3.5a2.5 2.5 0 11-.01 5.01A2.5 2.5 0 014.98 3.5zM2 9h6v12H2zM14.5 9c-2.5 0-3.5 1.67-3.5 2.92V21h6v-7.5c0-2 1.6-2.2 2-2.2 0-1.6-1.5-2.3-3.5-2.3z"/>
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+              </li>
+              {% endif %}
 
-        {% if about.email %}
-        <li>
-          <a href="mailto:{{ about.email }}" class="flex items-center gap-3 hover:text-teal-600 transition">
-            <svg class="w-5 h-5 text-gray-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">...</svg>
-            <span>{{ about.email }}</span>
-          </a>
-        </li>
-        {% endif %}
+              {% if about.telegram %}
+              <li>
+                <a href="{{ about.telegram }}" target="_blank" class="flex items-center gap-3 hover:text-sky-500 transition">
+                  <!-- Telegram Icon -->
+                  <svg class="w-5 h-5 text-gray-600 flex-none" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9.04 17.69l-.39 3.8c.56 0 .8-.24 1.1-.52l2.64-2.48 5.48 3.99c1 .55 1.71.26 1.96-.92l3.56-16.73-.01.01c.32-1.5-.55-2.1-1.52-1.8L.95 10.39c-1.48.57-1.45 1.4-.27 1.78l4.47 1.4 10.36-6.5c.49-.3.94-.14.57.2z"/>
+                  </svg>
+                  <span>Telegram</span>
+                </a>
+              </li>
+              {% endif %}
 
-      </ul>
-    </div>
-  </div>
-</section>
+              {% if about.email %}
+              <li>
+                <a href="mailto:{{ about.email }}" class="flex items-center gap-3 hover:text-teal-600 transition break-words">
+                  <!-- Email Icon -->
+                  <svg class="w-5 h-5 text-gray-600 flex-none" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16a2 2 0 002-2V6c0-1.1-.9-2-2-2zm-1 4l-7 5-7-5V6l7 5 7-5v2z"/>
+                  </svg>
+                  <span>{{ about.email }}</span>
+                </a>
+              </li>
+              {% endif %}
+
+            </ul>
+          </div>
+
+        </div>
+      </section>
 
       <!-- skills -->
       <section class="mb-24 px-6">
