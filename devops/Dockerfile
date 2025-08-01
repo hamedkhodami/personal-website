@@ -6,7 +6,7 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 COPY requirements.txt /app/
-RUN pip install --upgrade pip && pip3 install --no-cache-dir -r /app/requirements.txt
+RUN pip install --upgrade pip && pip3 install -r /app/requirements.txt
 
 COPY src /app/src
 ENV PYTHONPATH=/app/src
