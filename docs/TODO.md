@@ -52,18 +52,18 @@ pip uninstall psycopg2
 - [✓] Push to private registry (if using)
 
 ### 🌐 Step 3: Setup domain and Nginx for live use
-- [ ] Buy or assign domain
-- [ ] Point DNS to server IP
-- [ ] Configure Nginx to route traffic
-- [ ] Test site publicly on HTTP (port 80)
+- [✓] Buy or assign domain
+- [✓] Point DNS to server IP
+- [✓] Configure Nginx to route traffic
+- [✓] Test site publicly on HTTP (port 80)
 
 ### 🔐 Step 4: Enable HTTPS with Let’s Encrypt
-- [ ] Install certbot inside or outside container
-- [ ] Update Nginx config to handle HTTPS
-- [ ] Verify SSL cert renewal automation
+- [✓] Install certbot inside or outside container
+- [✓] Update Nginx config to handle HTTPS
+- [✓] Verify SSL cert renewal automation
 
 ### 📦 Step 5: Production Deployment & Smoke Test
-- [ ] Deploy full stack on production VPS
-- [ ] Run smoke test (basic routes, async, login if exists)
-- [ ] Confirm logs and system health
-- [ ] Document all production URLs and secrets
+- [✓] Deploy full stack on production VPS
+- [✓] Run smoke test (basic routes, async, login if exists)
+- [✓] Confirm logs and system health
+- [✓] Document all production URLs and secrets

@@ -16,7 +16,7 @@ class ContactUsView(FormView):
     def form_valid(self, form):
         instance = form.save()
 
-        send_contact_email(
+        send_contact_email.delay(
             instance.full_name,
             instance.email,
             instance.get_subject_display(),
