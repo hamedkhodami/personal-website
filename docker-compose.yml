@@ -9,20 +9,10 @@ services:
       timeout: 5s
       retries: 5
 
-  db:
-      image: postgres:14-alpine
-      restart: always
-      env_file:
-        - ../src/.env
-      volumes:
-        - postgres_data:/var/lib/postgresql/data
-      ports:
-        - "5435:5432"
-
   web:
     build:
-      context: ../
-      dockerfile: devops/Dockerfile
+      context: ./
+      dockerfile: ./Dockerfile
     image: worknest-app
     working_dir: /app/src
     volumes:
@@ -30,16 +20,15 @@ services:
       - media_volume:/app/src/static/media
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
+      - db_volume:/app/src
 
     ports:
       - "8000:8000"
     depends_on:
       redis:
         condition: service_healthy
-      db:
-        condition: service_started
     env_file:
-      - ../src/.env
+      - ./src/.env
 
   celery_worker:
     image: worknest-app
@@ -48,13 +37,12 @@ services:
     working_dir: /app/src
     depends_on:
       - redis
-      - db
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
       - static_volume:/var/www/static
     env_file:
-      - ../src/.env
+      - ./src/.env
 
 
   celery_beat:
@@ -64,13 +52,12 @@ services:
     working_dir: /app/src
     depends_on:
       - redis
-      - db
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
       - static_volume:/var/www/static
     env_file:
-      - ../src/.env
+      - ./src/.env
 
 
   flower:
@@ -100,3 +87,4 @@ volumes:
   postgres_data:
   static_volume:
   media_volume:
+  db_volume:
