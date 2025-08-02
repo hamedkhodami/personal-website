@@ -23,6 +23,7 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*').split(',')
 
 # ---CSRF---------------------------------------------------------
 CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED',).split(',')
+print(CSRF_TRUSTED_ORIGINS)
 # ----------------------------------------------------------------
 
 
@@ -128,9 +129,6 @@ USE_TZ = False
 STATIC_URL = '/static/'
 STATIC_ROOT = os.getenv('STATIC_ROOT')
 
-STATICFILES_DIRS = [
-   os.getenv('STATICFILES_DIRS', BASE_DIR / 'static/assets/'),
-]
 # ----------------------------------------------------------------
 
 
@@ -200,3 +198,7 @@ ROSETTA_ACCESS_CONTROL_FUNCTION = lambda u: u.is_staff
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 # ---------------------------------------------------------------
 
+
+# --SECURE PROXY--------------------------------------------------
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# ---------------------------------------------------------------
